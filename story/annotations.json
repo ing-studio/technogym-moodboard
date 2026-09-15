@@ -1,43 +1,12 @@
 {
-  "_note": "Boxes drawn on images, keyed by image id. box = [x, y, w, h] as fractions of the web image (plans: trimmed). group selects which boxes a beat shows; n is the label letter or number (empty: name only). Plan zones and stairs are our reading of the drawings.",
+  "_note": "Boxes drawn on images, keyed by image id. box = [x, y, w, h] as fractions of the web image (plans: trimmed). group selects which boxes a beat shows; n is the label number (empty: name only).",
   "images": {
     "vision-01-cardio-gallery-oak-ceiling": [
-      {"id": "shell-ceiling", "group": "layers", "n": "1", "name": "Shell", "box": [0.34, 0.0, 0.46, 0.28]},
-      {"id": "shell-partition", "group": "layers", "n": "1", "name": "Shell", "box": [0.0, 0.0, 0.38, 0.56]},
-      {"id": "light", "group": "layers", "n": "2", "name": "Light", "box": [0.72, 0.0, 0.28, 0.4]},
-      {"id": "equipment", "group": "layers", "n": "3", "name": "Equipment", "box": [0.53, 0.42, 0.47, 0.53]},
-      {"id": "objects-weights", "group": "layers", "n": "4", "name": "Objects", "box": [0.0, 0.6, 0.34, 0.39]},
-      {"id": "objects-art", "group": "layers", "n": "4", "name": "Objects", "box": [0.43, 0.31, 0.13, 0.25]}
-    ],
-    "plan-level-05": [
-      {"id": "l5-change", "group": "zones", "n": "C", "name": "Change", "box": [0.03, 0.05, 0.18, 0.87]},
-      {"id": "l5-deck", "group": "zones", "n": "R", "name": "Recover", "box": [0.73, 0.09, 0.23, 0.34]},
-      {"id": "l5-open", "group": "zones", "n": "R", "name": "Recover", "box": [0.24, 0.46, 0.71, 0.41]}
-    ],
-    "plan-level-04": [
-      {"id": "l4-studio", "group": "zones", "n": "S", "name": "Studio", "box": [0.035, 0.06, 0.17, 0.86]},
-      {"id": "l4-train", "group": "zones", "n": "T", "name": "Train", "box": [0.21, 0.06, 0.585, 0.86]},
-      {"id": "l4-cardio", "group": "zones", "n": "T", "name": "Train", "box": [0.8, 0.06, 0.165, 0.86]}
-    ],
-    "plan-level-03": [
-      {"id": "l3-train", "group": "zones", "n": "T", "name": "Train", "box": [0.035, 0.06, 0.93, 0.86]},
-      {"id": "l3-daylight", "group": "light", "n": "", "name": "Daylight", "box": [0.035, 0.84, 0.93, 0.09]}
-    ],
-    "plan-level-02": [
-      {"id": "l2-train", "group": "zones", "n": "T", "name": "Train", "box": [0.035, 0.05, 0.93, 0.79]}
-    ],
-    "plan-level-b1": [
-      {"id": "daylight", "group": "issues", "n": "1", "name": "Daylight", "box": [0.03, 0.31, 0.38, 0.59]},
-      {"id": "density", "group": "issues", "n": "2", "name": "Density", "box": [0.19, 0.02, 0.27, 0.17]},
-      {"id": "continuity", "group": "issues", "n": "3", "name": "Continuity", "box": [0.41, 0.3, 0.12, 0.2]},      {"id": "b1-cycling", "group": "zones", "n": "S", "name": "Studio", "box": [0.19, 0.02, 0.27, 0.17]},
-      {"id": "b1-boxing", "group": "zones", "n": "S", "name": "Studio", "box": [0.535, 0.3, 0.25, 0.28]},
-      {"id": "b1-train", "group": "zones", "n": "T", "name": "Train", "box": [0.47, 0.02, 0.5, 0.27]}
-    ],
-    "plan-level-b2": [
-      {"id": "b2-lockers", "group": "zones", "n": "C", "name": "Change", "box": [0.52, 0.3, 0.27, 0.39]},
-      {"id": "b2-changing", "group": "zones", "n": "C", "name": "Change", "box": [0.52, 0.18, 0.32, 0.12]},
-      {"id": "b2-cabins", "group": "zones", "n": "C", "name": "Change", "box": [0.03, 0.3, 0.39, 0.6]},
-      {"id": "b2-no-daylight", "group": "light", "n": "", "name": "No daylight", "box": [0.03, 0.03, 0.94, 0.94]}
+      {"id": "oak-ceiling", "group": "layers", "n": "1", "name": "Oak", "box": [0.34, 0.0, 0.46, 0.28]},
+      {"id": "glass-partition", "group": "layers", "n": "2", "name": "Glass", "box": [0.0, 0.0, 0.33, 0.56]},
+      {"id": "glass-windows", "group": "layers", "n": "2", "name": "Glass", "box": [0.72, 0.0, 0.28, 0.4]},
+      {"id": "metal-equipment", "group": "layers", "n": "3", "name": "Metal", "box": [0.53, 0.42, 0.47, 0.53]},
+      {"id": "steel-textile", "group": "layers", "n": "4", "name": "Steel and textile", "box": [0.0, 0.6, 0.34, 0.39]}
     ]
   }
 }

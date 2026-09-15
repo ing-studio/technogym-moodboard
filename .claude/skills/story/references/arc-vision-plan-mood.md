@@ -1,29 +1,29 @@
 # Arc: vision → plan → mood
 
-The project arc. **Core message:** a mood cannot be built from single rooms. It is built from every layer
-inside a room and from the top view of the whole building (zones, route, depth). The vision chapter sets
-that up; the plan and mood chapters answer it. Specifics come from `story/brief.md`.
+The project arc. **Core message:** a mood cannot be built from single rooms. The building works as one body,
+so the mood has to run through all of it, made of natural materials. The vision chapter sets that up; the
+plan and mood chapters answer it. Specifics come from `story/brief.md`.
 
 | # | chapter | beat | visual (PHASES) | job |
 |---|---|---|---|---|
 | 0 | Introduction | intro | `none`: plain ground | the claim and the three chapters; bridge to the proposal |
 | 1 | 01 Vision | what is proposed | `grid`: all Technogym renders, tagged Room / Cardio / Storage | what the styling is for (generic, made to present equipment), what we have, what it offers |
-| 2 | 01 Vision | what we need to look at | `figure`: a render (group `layers`), no plan yet | eye-level layers 1-4 (shell, light, equipment, objects); bridge to the top view |
-| 3 | 01 Vision | what needs to be assessed | `figure`: the same plan (group `issues`) + strip of renders | introduces zones, route and depth with the plan; the points only the plan reveals (daylight, density, continuity); the mood must answer all together |
-| 4 | 02 Floor plan | top down | `figure`: all floors in 2 columns (above, below ground), group `zones` | every floor has a job and the stairs join them; one idea, minimal copy |
-| 5 | 02 Floor plan | light and requirements | `figure`: a glazed floor beside a windowless one, group `light` | the four requirements the plan sets for the mood |
-| 6 | 03 Mood | why natural materials | `grid`: 4 images tagged 1-4 | each requirement answered by natural materials; they are needed, not decoration |
-| 7 | 03 Mood | proposal | `grid`: a core tile plus one tile per floor type | the timber spine: one oak core, one natural material per floor's job |
-| 8-11 | 03 Mood | one beat per material | `grid`: 6 images from 03-mood, 3 columns | Works / Looks / Where for wood; stone and earth; plaster and light; textile, leather and bronze |
-| 12 | 03 Mood | landing | `grid`: material close-ups with swatches | the list of proposed natural materials; restate the opening claim |
+| 2 | 01 Vision | what we need to look at | `figure`: a render with numbered material boxes (group `layers`) | the materials in the render and what each one means |
+| 3 | 01 Vision | what needs to be assessed | `grid`: the renders that raise each point, large, tagged 1-3 | daylight, density, continuity; the mood must answer all three together |
+| 4 | 02 Floor plan | one body | `figure`: all floors in 2 columns, no boxes | the building as one organism: stairs as spine, corridors as circulation; no floor has a mood of its own |
+| 5 | 03 Mood | why natural materials | `grid`: 4 images, 3 tagged 1-3 | each point (daylight, density, continuity) answered by natural materials; they are needed, not decoration |
+| 6 | 03 Mood | proposal | `grid`: a core tile plus one tile per floor type | the timber spine: one oak core, one natural material per floor's job |
+| 7-10 | 03 Mood | one beat per material | `grid`: 6 images from 03-mood, 3 columns | Works / Looks / Where for wood; stone and earth; plaster and light; textile, leather and bronze |
+| 11 | 03 Mood | landing | `grid`: material close-ups with swatches | the list of proposed natural materials; restate the opening claim |
 
 ## Rules for this arc
 
 - **Assess, never attack.** Name what the proposal offers before its open points. Phrase each point as a
   question the design must answer.
-- **Every point names its source and its answer**: the layer or top-view aspect it comes from (in the card,
-  e.g. "Light, depth") and the chapter that answers it (plan or mood).
-- **Layer numbers carry through**: layer 1-4 labels on the stage match the card list;
+- **Every point is answered later**: daylight, density and continuity each come back in the mood chapter.
+- **Talk about the building as one body**, never as separate pieces; talk about materials and their meaning,
+  not about render layers.
+- **Numbers carry through**: 1-4 labels on the stage match the card list;
   tags on tiles match the numbered points.
 - **Each beat ends on a bridge line** the next beat picks up.
 - **Never name an unconfirmed level** in copy; say "lower-ground floors" until the brief confirms names.

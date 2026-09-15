@@ -22,6 +22,7 @@ from PIL import Image, ImageOps
 SRC = "assets/source"
 CATALOG = "assets/catalog.json"
 MEASURED = ("file", "chapter", "w", "h", "bytes", "orientation", "palette", "sha256")
+IMAGE_EXT = (".jpg", ".jpeg", ".png", ".webp")
 
 
 def sha(p):
@@ -57,6 +58,8 @@ def main():
         if not os.path.isdir(d):
             continue
         for name in sorted(os.listdir(d)):
+            if os.path.splitext(name)[1].lower() not in IMAGE_EXT:
+                continue          # Thumbs.db, .DS_Store and other OS files
             p = os.path.join(d, name).replace("\\", "/")
             iid = os.path.splitext(name)[0]
             with Image.open(p) as im:

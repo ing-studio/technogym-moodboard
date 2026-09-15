@@ -1,33 +1,9 @@
 {
   "_note": "Every number shown in the deck. Bind with <span data-bind=\"id\">. assumed:true renders a visible * marker. Reuse an id before adding a new one.",
   "facts": {
-    "vision_images": {
-      "value": 7, "display": "7", "unit": "images",
-      "source": "assets/catalog.json: images in chapter 01-vision", "assumed": false
-    },
-    "vision_rooms": {
-      "value": 3, "display": "3", "unit": "rooms",
-      "source": "assets/catalog.json: vision-01, 02, 03 (tag overview)", "assumed": false
-    },
-    "vision_cardio": {
-      "value": 2, "display": "2", "unit": "cardio close-ups",
-      "source": "assets/catalog.json: vision-04, 05 (tag cardio)", "assumed": false
-    },
-    "vision_storage": {
-      "value": 2, "display": "2", "unit": "storage details",
-      "source": "assets/catalog.json: vision-06, 07 (tag storage)", "assumed": false
-    },
     "plan_levels": {
       "value": 6, "display": "6", "unit": "floors",
       "source": "assets/source/02-floor-plan: one drawing per floor", "assumed": false
-    },
-    "levels_above_ground": {
-      "value": 4, "display": "4", "unit": "floors",
-      "source": "drawing files named 2, 3, 4, 5 with glazed facades; level names still to be confirmed", "assumed": true
-    },
-    "levels_below_ground": {
-      "value": 2, "display": "2", "unit": "floors",
-      "source": "drawing files named -1 and -2, no facade openings drawn; level names still to be confirmed", "assumed": true
     }
   }
 }

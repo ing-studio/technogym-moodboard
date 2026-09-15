@@ -1834,11 +1834,12 @@
       "id": "mood-49-white-burl-veneer",
       "file": "assets/source/03-mood/mood-49-white-burl-veneer.jpg",
       "chapter": "03-mood",
-      "title": "White burl veneer",
-      "alt": "Whitewashed burl veneer with dense swirling grain",
+      "title": "Cork veneer",
+      "alt": "Close-up of pale cork veneer with a dense, swirling natural pattern",
       "tags": [
         "materials",
         "veneer",
+        "cork",
         "texture"
       ],
       "sha256": "2fb17750dc40d513a47fafe0a329add1b12612d8348847b1e68878b8d414d615",
@@ -2031,6 +2032,35 @@
       "web_w": 736,
       "web_h": 971,
       "web_bytes": 35366
+    },
+    {
+      "id": "mood-56-orange-cable-tray-lights",
+      "title": "Orange glass studio",
+      "alt": "Studio behind orange-tinted glass walls with a functional rig and reformer, weight racks in front, pale timber floor and an exposed ceiling with orange pipes",
+      "tags": [
+        "functional",
+        "studio",
+        "orange",
+        "glass"
+      ],
+      "file": "assets/source/03-mood/mood-56-orange-cable-tray-lights.jpg",
+      "chapter": "03-mood",
+      "w": 1200,
+      "h": 1200,
+      "bytes": 216369,
+      "orientation": "square",
+      "palette": [
+        "#c4b2a3",
+        "#b28368",
+        "#3d271e",
+        "#695346",
+        "#995d44"
+      ],
+      "sha256": "e5fc7633adbd702311e34a3cd98ae211d4a584bee10bd221d16d902eea5cc3d1",
+      "web": "assets/web/03-mood/mood-56-orange-cable-tray-lights.webp",
+      "web_w": 1200,
+      "web_h": 1200,
+      "web_bytes": 157782
     }
   ]
 }

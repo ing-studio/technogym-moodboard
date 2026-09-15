@@ -4,15 +4,15 @@ A scroll story for a gym design project. It shows that a design becomes easier t
 on when the client's vision, our floor plan and the suggested mood are consolidated into one argument,
 and it doubles as a method for building a mood board.
 
-**Core message:** a mood cannot be built from single rooms. It is built from every layer inside a room
-(shell, light, equipment, objects) and from the top view of the whole building (zones, route, depth).
+**Core message:** a mood cannot be built from single rooms. The building works as one body, one organism,
+so the mood has to run through all of it, made of natural materials (wood, stone, earth, plaster, textile).
 
 Three chapters, in this order:
 0. **Intro**: plain ground, the claim and the chapters.
 1. **Vision**: the proposed Technogym styling in 3 beats: what is proposed, what we need to look at, what needs
    to be assessed (`assets/source/01-vision`).
-2. **Floor plan**: 2 beats: all floors top down with zones, then light and the four requirements
-   (`assets/source/02-floor-plan`, `story/annotations.json`).
+2. **Floor plan**: 1 beat: all floors read as one body, one organism, not separate pieces
+   (`assets/source/02-floor-plan`).
 3. **Mood**: why natural materials, the timber spine proposal, one beat per material (wood; stone and earth;
    lime plaster and warm light; textile, leather and bronze), and the list of proposed materials
    (`assets/source/03-mood`).
