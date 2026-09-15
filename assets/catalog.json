@@ -2119,6 +2119,92 @@
       "web_w": 800,
       "web_h": 1600,
       "web_bytes": 208532
+    },
+    {
+      "id": "mood-59-yellow-perforated-steel-staircase",
+      "title": "Yellow steel staircase",
+      "alt": "Staircase and tall wall clad in bright yellow perforated steel with a large tree image and round openings",
+      "tags": [
+        "accent",
+        "staircase",
+        "yellow",
+        "steel"
+      ],
+      "file": "assets/source/03-mood/mood-59-yellow-perforated-steel-staircase.jpg",
+      "chapter": "03-mood",
+      "w": 1200,
+      "h": 1800,
+      "bytes": 694747,
+      "orientation": "portrait",
+      "palette": [
+        "#8c7c49",
+        "#a1904f",
+        "#49463d",
+        "#b7a865",
+        "#cfc27b"
+      ],
+      "sha256": "7aeec5870b2f2cfb89ba6be3f9403ddf8eb444e73bc523a19ad1bd2a13d4c688",
+      "web": "assets/web/03-mood/mood-59-yellow-perforated-steel-staircase.webp",
+      "web_w": 1067,
+      "web_h": 1600,
+      "web_bytes": 634298
+    },
+    {
+      "id": "mood-60-led-screen-walls-yoga-room",
+      "title": "LED forest yoga room",
+      "alt": "Yoga class stretching on mats in a room whose walls are projected with a green forest",
+      "tags": [
+        "accent",
+        "led",
+        "studio",
+        "immersive"
+      ],
+      "file": "assets/source/03-mood/mood-60-led-screen-walls-yoga-room.jpg",
+      "chapter": "03-mood",
+      "w": 736,
+      "h": 552,
+      "bytes": 80453,
+      "orientation": "landscape",
+      "palette": [
+        "#b6c5c1",
+        "#71837c",
+        "#1e1b1a",
+        "#303532",
+        "#464f48"
+      ],
+      "sha256": "1ff44a6aa5b8151405657cb04e0d567011b4dec937585e1980968d78b75052ce",
+      "web": "assets/web/03-mood/mood-60-led-screen-walls-yoga-room.webp",
+      "web_w": 736,
+      "web_h": 552,
+      "web_bytes": 68844
+    },
+    {
+      "id": "mood-61-christiano-ronaldo-blured-poster",
+      "title": "Blurred athlete poster",
+      "alt": "Poster of an athlete in profile, the body dissolving into an orange and blue blur",
+      "tags": [
+        "accent",
+        "poster",
+        "colour"
+      ],
+      "file": "assets/source/03-mood/mood-61-christiano-ronaldo-blured-poster.jpg",
+      "chapter": "03-mood",
+      "w": 736,
+      "h": 981,
+      "bytes": 63918,
+      "orientation": "portrait",
+      "palette": [
+        "#d0d8e5",
+        "#644965",
+        "#c6b9cf",
+        "#e0e4ec",
+        "#e0dee7"
+      ],
+      "sha256": "bc33605077a1cad65552dd18e2d7d29e4599bc6d08e81cc4282d457533c4414d",
+      "web": "assets/web/03-mood/mood-61-christiano-ronaldo-blured-poster.webp",
+      "web_w": 736,
+      "web_h": 981,
+      "web_bytes": 45700
     }
   ]
 }

@@ -22,6 +22,7 @@ into plaster, stucco and textile, with stone and earth grounding it.
 | 10 | mood-plaster | 03 Mood | Material: lime plaster and light | Plaster *holds* the light | grid: mood-56, 46, 47, 17, 37, 55 (LED screen room) |
 | 11 | mood-textile | 03 Mood | Material: textile, leather and copper | Textile and leather make it *soft* | grid: mood-34, 26, 16, 41 (2 columns) |
 | 12 | mood-close | 03 Mood | The materials we propose | A mood built from the *whole* building | grid: mood-42 (big), 48, 50, 19, 51 |
+| 13 | mood-accents | 03 Mood | Bright accents | Calm materials, a few *bright* moments | grid: mood-59 staircase (big), 60, 54, 61, 31; tags Vertical connection, LED display, Billboard, Light accent |
 
 ## Key copy decisions
 
