@@ -28,7 +28,10 @@ plaster, light and textile around it.
 - **02** What we have: generic warm spaces, well lit, natural materials. No counts.
 - **03** Materials and their meaning, not layers: oak (warmth and craft), glass (openness, but needs a view),
   sand-coloured metal (calm equipment), steel and textile (strength beside softness).
-- **04** The floor plan is removed; the three renders are shown large. Points: daylight, density, continuity.
+- **04** The floor plan is removed; the three renders are shown large. Points, in the client's words:
+  daylight (soft ambient natural light layered with spot lighting that defines the body in motion),
+  density (deliberately spare, never overdesigned, built around the client), continuity (one building,
+  one body: space and person conceived together, one continuous thought from entrance to equipment to body).
 - **05** The building as one organism: stairs as spine, corridors as circulation, facades where it takes in
   light. No floor can have a mood of its own. No zone boxes, so the plans are not cut into pieces.
 - The former "same mood with and without daylight" beat is removed.
