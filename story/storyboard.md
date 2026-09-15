@@ -5,8 +5,8 @@ Visual spec = the `PHASES` entry the beat gets. Beat numbers are added by the en
 (`deck/index.html`) holds the final copy; this page records structure and decisions.
 
 **Core message:** a mood cannot be built from single rooms. The building works as one body, so the mood
-has to run through all of it. The images in 03-mood form that idea: a timber spine with stone, earth,
-plaster, light and textile around it.
+has to run through all of it. The images in 03-mood form that idea: wood at the heart, its warmth carried
+into plaster, stucco and textile, with stone and earth grounding it.
 
 | # | step id | chapter | eyebrow | headline (accent) | visual (PHASES) |
 |---|---|---|---|---|---|
@@ -15,8 +15,8 @@ plaster, light and textile around it.
 | 03 | vision-look | 01 Vision | What we need to look at | Read it by *material* | figure: vision-01, boxes 1 Oak, 2 Glass, 3 Metal, 4 Steel and textile |
 | 04 | vision-assess | 01 Vision | What needs to be assessed | Three points to *assess* before we build the mood | grid: vision-02 (big), 03, 01 tagged 1-3 |
 | 05 | plan-overview | 02 Floor plan | Top down | One building, one *body* | figure: 6 plans in 2 columns, no boxes |
-| 06 | mood-natural | 03 Mood | Why natural materials | Why the mood is built from *natural* materials | grid: mood-08 (big, 2 Density), 22 (1 Daylight), 01 (3 Continuity) |
-| 07 | mood-spine | 03 Mood | Our proposal | A timber spine through *every* floor | grid: mood-44 (big), 35, 04, 09, 20 |
+| 06 | mood-natural | 03 Mood | Why natural materials | Why the mood is built from *natural* materials | grid: mood-01 (big, 3 Continuity), 22 (1 Daylight), 08 (2 Density) |
+| 07 | mood-spine | 03 Mood | Our proposal | Wood at the heart, *warmth* everywhere | grid: mood-44, 04, 09, 20 (no tags) |
 | 08 | mood-wood | 03 Mood | Material: wood | Wood carries the *spine* | grid: mood-05, 23, 18, 14, 12, 49 (cork veneer) |
 | 09 | mood-earth | 03 Mood | Material: stone and earth | Stone and earth *ground* it | grid: mood-38, 39, 40, 36, 31, 32 |
 | 10 | mood-plaster | 03 Mood | Material: lime plaster and light | Plaster *holds* the light | grid: mood-02, 46, 47, 17, 37, 55 (LED screen room) |
@@ -38,13 +38,15 @@ plaster, light and textile around it.
 - **08** Cork veneer (mood-49, retitled from "white burl veneer"): warm to touch, slightly giving, absorbs sound.
 - **10** LED screen room: holds light like plaster, but can change it (a sky for windowless floors, a slow
   landscape for recovery, a bright scene for classes). One surface, many moods.
+- **07** Proposal: wood is the heart of the mood and stays throughout; its warmth travels into plaster,
+  stucco and textile so the building never feels heavy. No materials assigned per level; no image tags.
 - **12** Materials list: wood (oak, walnut, cork, figured veneer), stone, earth, plaster, textile and leather,
   metal details.
 
 ## 03-mood images
 
-- Used: 01, 02, 04, 05, 06, 08, 09, 12, 14, 16, 17, 18, 19, 20, 22, 23, 25, 26, 31, 32, 34, 35, 36, 37, 38, 39, 40, 41, 42, 44, 46, 47, 48, 49, 50, 51, 55 (37 of 55; mood-40 appears in beats 06 and 09).
-- Not used: colour or neon led (03, 07, 27, 28, 30, 33, 52, 53, 54), concrete or steel (10, 13), too small (29), replaced on request (21, 24), third-party logo or sign (11, 15, 43, 45).
+- Used: 01, 02, 04, 05, 06, 08, 09, 12, 14, 16, 17, 18, 19, 20, 22, 23, 25, 26, 31, 32, 34, 36, 37, 38, 39, 40, 41, 42, 44, 46, 47, 48, 49, 50, 51, 55 (36 of 56).
+- Not used: colour or neon led (03, 07, 27, 28, 30, 33, 52, 53, 54), concrete or steel (10, 13), too small (29), replaced or removed on request (21, 24, 35), third-party logo or sign (11, 15, 43, 45).
 - mood-55 has a Xiaohongshu watermark in its bottom-right corner.
 
 ## Review board

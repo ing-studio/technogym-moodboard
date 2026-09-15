@@ -12,7 +12,7 @@ plan and mood chapters answer it. Specifics come from `story/brief.md`.
 | 3 | 01 Vision | what needs to be assessed | `grid`: the renders that raise each point, large, tagged 1-3 | daylight, density, continuity; the mood must answer all three together |
 | 4 | 02 Floor plan | one body | `figure`: all floors in 2 columns, no boxes | the building as one organism: stairs as spine, corridors as circulation; no floor has a mood of its own |
 | 5 | 03 Mood | why natural materials | `grid`: 4 images, 3 tagged 1-3 | each point (daylight, density, continuity) answered by natural materials; they are needed, not decoration |
-| 6 | 03 Mood | proposal | `grid`: a core tile plus one tile per floor type | the timber spine: one oak core, one natural material per floor's job |
+| 6 | 03 Mood | proposal | `grid`: 4 wood-led images, no tags | wood at the heart of the mood; its warmth carried into plaster, stucco and textile; never split by level |
 | 7-10 | 03 Mood | one beat per material | `grid`: 6 images from 03-mood, 3 columns | Works / Looks / Where for wood; stone and earth; plaster and light; textile, leather and bronze |
 | 11 | 03 Mood | landing | `grid`: material close-ups with swatches | the list of proposed natural materials; restate the opening claim |
 
