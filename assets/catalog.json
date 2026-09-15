@@ -2090,6 +2090,35 @@
       "web_w": 736,
       "web_h": 1442,
       "web_bytes": 284038
+    },
+    {
+      "id": "mood-58-travertine",
+      "title": "Travertine",
+      "alt": "Close-up of pale cream travertine with long vertical veins and small natural pores",
+      "tags": [
+        "materials",
+        "travertine",
+        "stone",
+        "texture"
+      ],
+      "file": "assets/source/03-mood/mood-58-travertine.jpg",
+      "chapter": "03-mood",
+      "w": 1200,
+      "h": 2400,
+      "bytes": 490453,
+      "orientation": "portrait",
+      "palette": [
+        "#dbcebd",
+        "#ded3c3",
+        "#e1d7c7",
+        "#d5c7b5",
+        "#e4dcce"
+      ],
+      "sha256": "9d6f2477dcf9309e12c48c0b650dcf18f769d0ff57fc06156ad8106dbbad3dc2",
+      "web": "assets/web/03-mood/mood-58-travertine.webp",
+      "web_w": 800,
+      "web_h": 1600,
+      "web_bytes": 208532
     }
   ]
 }
