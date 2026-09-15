@@ -65,10 +65,10 @@ Hand-written: `title` (2-4 words, no em dash), `alt` (what is visible, one sente
 
 ```json
 { "images": { "plan-level-b1": [
-  { "id": "route", "group": "view", "n": "B", "name": "Route", "box": [0.41, 0.30, 0.12, 0.20] } ] } }
+  { "id": "continuity", "group": "issues", "n": "3", "name": "Continuity", "box": [0.41, 0.30, 0.12, 0.20] } ] } }
 ```
 - Keyed by image id; works for plans and renders alike.
-- `group` is the set a beat shows (`layers`, `view`, `issues`, `areas`, …); one image can carry several.
+- `group` is the set a beat shows (`layers`, `issues`, `areas`, …); one image can carry several.
 - `n` is the on-stage label (number or letter) and must match the numbered list in the card.
 - `box` = `[x, y, w, h]` as fractions of the **web** image (plans already trimmed of white sheet), so pixel
   coordinates from `assets/web/<chapter>/<id>.webp` divided by `web_w`/`web_h`. Check with a screenshot.

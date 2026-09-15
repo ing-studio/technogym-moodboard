@@ -21,7 +21,7 @@ How `deck/index.html` works. Read with `engine_skeleton.html` open.
 ```js
 { images: { "vision-01-cardio-gallery-oak-ceiling": { src:"../assets/web/01-vision/….webp", alt, title, tags,
             palette:["#…"], web_w, web_h, chapter, orientation } },
-  annotations: { "plan-level-b1": [ { id:"route", group:"view", n:"B", name:"Route", box:[x,y,w,h] } ] },
+  annotations: { "plan-level-b1": [ { id:"continuity", group:"issues", n:"3", name:"Continuity", box:[x,y,w,h] } ] },
   facts:  { "vision_images": { value:7, display:"7", source:"assets/catalog.json …", assumed:false } } }
 ```
 

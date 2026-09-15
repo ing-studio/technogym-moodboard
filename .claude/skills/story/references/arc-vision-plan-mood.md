@@ -8,8 +8,8 @@ that up; the plan and mood chapters answer it. Specifics come from `story/brief.
 |---|---|---|---|---|
 | 0 | Introduction | intro | `none`: plain ground | the claim and the three chapters; bridge to the proposal |
 | 1 | 01 Vision | what is proposed | `grid`: all Technogym renders, tagged Room / Cardio / Storage | what the styling is for (generic, made to present equipment), what we have, what it offers |
-| 2 | 01 Vision | what we need to look at | `figure`: a render (group `layers`) beside a plan (group `view`) | the two views: eye-level layers 1-4 (shell, light, equipment, objects) and top-view aspects A-C (zones, route, depth) |
-| 3 | 01 Vision | what needs to be assessed | `figure`: the same plan (group `issues`) + strip of renders | the points only the plan reveals (daylight, density, continuity, coverage); the mood must answer all together |
+| 2 | 01 Vision | what we need to look at | `figure`: a render (group `layers`), no plan yet | eye-level layers 1-4 (shell, light, equipment, objects); bridge to the top view |
+| 3 | 01 Vision | what needs to be assessed | `figure`: the same plan (group `issues`) + strip of renders | introduces zones, route and depth with the plan; the points only the plan reveals (daylight, density, continuity, coverage); the mood must answer all together |
 | 4-n | 02 Floor plan | the building, then area by area | `figure`: plan level, `focus` per area | each area: zones, route, depth, the one fact that matters |
 | n+1… | 03 Mood | per area, then materials | `grid`: 3-6 images tagged for the area, with swatches | how each area answers the points: materials, light, colour |
 | last | Close | landing | `figure` plan overview or `grid` | restate the claim, now earned |
@@ -20,7 +20,7 @@ that up; the plan and mood chapters answer it. Specifics come from `story/brief.
   question the design must answer.
 - **Every point names its source and its answer**: the layer or top-view aspect it comes from (in the card,
   e.g. "Light, depth") and the chapter that answers it (plan or mood).
-- **Numbers and letters carry through**: layer 1-4 and aspect A-C labels on the stage match the card lists;
+- **Layer numbers carry through**: layer 1-4 labels on the stage match the card list;
   tags on tiles match the numbered points.
 - **Each beat ends on a bridge line** the next beat picks up.
 - **Never name an unconfirmed level** in copy; say "lower-ground floors" until the brief confirms names.
