@@ -1,0 +1,11 @@
+# generated
+assets/web/
+deck/build/
+_review/
+
+# junk
+__pycache__/
+*.pyc
+.DS_Store
+__MACOSX/
+Thumbs.db
