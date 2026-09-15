@@ -26,5 +26,5 @@ Stage 0 of the scrollyteller workflow. A person confirms this page before any st
 - Mood proposal: wood at the heart of the mood, kept throughout; its warmth carried into plaster, stucco and
   textile so the building never feels heavy. No material assignments per level.
   Proposed materials: wood (oak, walnut, figured veneer), stone (travertine, rough stone), earth (rammed earth,
-  terracotta, glazed clay tile), lime plaster, textile and leather (linen, bouclé, leather), metal details
+  terracotta; terrazzo with stone), lime plaster, textile and leather (linen, bouclé, leather), metal details
   (bronze, brass, copper). Terracotta red is the one accent colour.

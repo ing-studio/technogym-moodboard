@@ -2061,6 +2061,35 @@
       "web_w": 1200,
       "web_h": 1200,
       "web_bytes": 157782
+    },
+    {
+      "id": "mood-57-terrazzo",
+      "title": "Terrazzo",
+      "alt": "Close-up of beige terrazzo with large stone chips in warm grey and sand tones",
+      "tags": [
+        "materials",
+        "terrazzo",
+        "stone",
+        "texture"
+      ],
+      "file": "assets/source/03-mood/mood-57-terrazzo.jpg",
+      "chapter": "03-mood",
+      "w": 736,
+      "h": 1442,
+      "bytes": 264542,
+      "orientation": "portrait",
+      "palette": [
+        "#c6b4a0",
+        "#cdbca9",
+        "#b4a089",
+        "#d0c0ae",
+        "#d4c5b4"
+      ],
+      "sha256": "3f868eae8537ae1df03ab7163906698d4e98ed98d77050bf5fc617575b6c5089",
+      "web": "assets/web/03-mood/mood-57-terrazzo.webp",
+      "web_w": 736,
+      "web_h": 1442,
+      "web_bytes": 284038
     }
   ]
 }

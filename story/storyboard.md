@@ -18,7 +18,7 @@ into plaster, stucco and textile, with stone and earth grounding it.
 | 06 | mood-natural | 03 Mood | Why natural materials | Why the mood is built from *natural* materials | grid: mood-01 (big, 3 Continuity), 22 (1 Daylight), 08 (2 Density) |
 | 07 | mood-spine | 03 Mood | Our proposal | Wood at the heart, *warmth* everywhere | grid: mood-44, 04, 09, 20 (no tags) |
 | 08 | mood-wood | 03 Mood | Material: wood | Wood carries the *spine* | grid: mood-05, 23, 18, 14, 12, 49 (cork veneer) |
-| 09 | mood-earth | 03 Mood | Material: stone and earth | Stone and earth *ground* it | grid: mood-38, 39, 40, 36, 31, 32 |
+| 09 | mood-earth | 03 Mood | Material: stone and earth | Stone and earth *ground* it | grid: mood-57 terrazzo (big), 38, 39, 40, 45 |
 | 10 | mood-plaster | 03 Mood | Material: lime plaster and light | Plaster *holds* the light | grid: mood-02, 46, 47, 17, 37, 55 (LED screen room) |
 | 11 | mood-textile | 03 Mood | Material: textile, leather and bronze | Textile and leather make it *soft* | grid: mood-06, 34, 26, 25, 16, 41 |
 | 12 | mood-close | 03 Mood | The materials we propose | A mood built from the *whole* building | grid: mood-42 (big), 48, 50, 19, 51 |
@@ -53,7 +53,7 @@ into plaster, stucco and textile, with stone and earth grounding it.
 
 | persona | attack | resolution |
 |---|---|---|
-| Interior designer | Timber near showers and under dropped weights | Wet areas are stone and glazed clay tile; wood is for walls, lockers, ceilings; cork on studio walls, not floors under weights |
+| Interior designer | Timber near showers and under dropped weights | Wet areas are travertine and terrazzo; wood is for walls, lockers, ceilings; cork on studio walls, not floors under weights |
 | Interior designer | LED screens are not a natural material | Presented as an extension of the plaster idea (holding light), not as a base material |
 | Client (gym owner) | Level numbers | Our reading of the drawings, still to be confirmed |
 | Narrative editor | Organism metaphor could get vague | Anchored to plan elements: stairs, corridors, facades; ends on a concrete rule (no floor has its own mood) |
