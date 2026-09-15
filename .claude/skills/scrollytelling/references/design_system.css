@@ -141,6 +141,16 @@ section.step{counter-increment:beat}
 .topbar .wm b{color:var(--accent);font-weight:700}
 .topbar .chap{font:600 11px/1 var(--font);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-mute);margin-right:24px}
 .topbar .chap b{color:var(--accent);font-weight:700;margin-left:12px}
+/* company logo: fixed in the corner on every beat, hands over to the centred logo on the final beat */
+.corner-logo{position:fixed;right:var(--pad);bottom:20px;z-index:9;width:56px;height:56px;pointer-events:none;
+  transition:opacity .6s ease,transform .6s var(--ease)}
+body[data-step="contact"] .corner-logo{opacity:0;transform:scale(.6)}
+.card.contact{text-align:center;display:flex;flex-direction:column;align-items:center}
+.contact .logo-big{width:min(260px,52vw);height:auto;margin:0 0 34px;transform:scale(.7);transition:transform 1s var(--ease)}
+.contact.in .logo-big{transform:none}
+.contact-links{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 36px;margin:4px 0 0;padding:18px 0 0;border-top:1px solid var(--line)}
+.contact-links a{font:600 clamp(16px,1.3vw,20px)/1.2 var(--font);letter-spacing:.02em;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--accent)}
+.contact-links a:hover,.contact-links a:focus-visible{color:var(--accent)}
 #rail{position:fixed;right:16px;top:50%;transform:translateY(-50%);z-index:8;display:flex;flex-direction:column;gap:12px}
 #rail button{width:8px;height:8px;border-radius:var(--r-dot);background:var(--line-strong);border:0;padding:0;cursor:pointer;transition:transform .3s,background .3s}
 #rail button.gap{margin-top:12px}
@@ -170,6 +180,8 @@ section.step{counter-increment:beat}
   .swatches{display:none}
   .tile-text{font-size:11px;padding:22px 6px 6px}
   .topbar .chap{margin-right:0}
+  .corner-logo{width:34px;height:34px;top:8px;bottom:auto;right:auto;left:50%;transform:translateX(-50%)}
+  body[data-step="contact"] .corner-logo{transform:translateX(-50%) scale(.6)}
   #rail{display:none}
 }
 
