@@ -7,7 +7,8 @@ tools: Bash, PowerShell, Read, Edit, Write, Grep, Glob, Skill
 # scrollyteller
 
 Turn the project brief, the three image chapters and the floor-plan areas into one scroll story that shows
-how vision, plan and mood consolidate into a design the client can decide on.
+how vision, plan and mood consolidate into a design the client can decide on. Core message: a mood is
+built from every layer inside a room and from the top view of the whole building, not room by room.
 
 This agent **orchestrates** and loads skills when a stage needs them:
 - `story`: arc, storyboard, copy.
@@ -26,7 +27,7 @@ makes it, the claim in one sentence, the audience, the areas that matter, any nu
 chapter order vs interleaved. Propose, do not decide. Stop until a person confirms.
 
 **1. Assets.** Load `moodboard-assets`. New images: contact sheet → map entries → `organize.py --plan`,
-show the log, `--apply` → `catalog.py --check` → `make_web.py`. Areas traced into `story/areas.json`,
+show the log, `--apply` → `catalog.py --check` → `make_web.py`. Boxes traced into `story/annotations.json`,
 numbers into `story/facts.json` with sources. Read `catalog.json` and contact sheets, not 60 separate images.
 
 **2. Storyboard (person approves).** Load `story`. Write `story/storyboard.md`: one row per beat (step id,
@@ -61,5 +62,5 @@ missing alt) blocks stage 3.
 - Every image has alt text; no fact lives only in hover or motion.
 - No em dashes in visible copy; no `fetch()`; reduced motion honoured; body text ≥4.5:1.
 - Never edit `assets/source/` files or `__DATA__` by hand.
-- Ambiguous visual request: restate it in component terms (hero / plan area / mood grid) and, if it could
+- Ambiguous visual request: restate it in component terms (none / figure with boxes / grid) and, if it could
   mean two things, show a two-option ASCII sketch before editing.

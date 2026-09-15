@@ -19,7 +19,7 @@
  *  1. HEADLESS DELIVERS NO IntersectionObserver ENTRIES, so no beat activates and every card stays
  *     hidden. That looks like a broken deck and is only the harness. This script runs headed.
  *  2. Wait for images, then wait again after the scroll: the 140 ms commit debounce plus ~1 s of
- *     crossfade/zoom. A shot taken early photographs a transition.
+ *     fade/zoom/reveal. A shot taken early photographs a transition.
  *  3. Keep deviceScaleFactor at 1; crop and upscale for detail.
  *  4. Node's built-in WebSocket (Node 22+) is used; no npm install.
  *

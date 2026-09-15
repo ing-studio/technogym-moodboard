@@ -29,7 +29,7 @@ Check: the first, middle and last beat read alone must carry situation, turn and
 | eyebrow | short uppercase kicker naming where we are: `Vision`, `Floor plan · Level 2`, `Mood · Change rooms` |
 | headline | ≤7 words, declarative, exactly one `<em>` on the pivot word |
 | body | 1-2 sentences, ≤40 words, one claim |
-| visual | one `PHASES` spec: hero images, a plan level + area, or a mood image set |
+| visual | one `PHASES` spec: none, a figure (render or plan + box group), or a grid of tagged images |
 | facts | any number is a `facts.json` id, never typed |
 
 ## Pivot word (all three must pass)

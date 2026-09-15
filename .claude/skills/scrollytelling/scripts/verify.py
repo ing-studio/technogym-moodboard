@@ -6,9 +6,12 @@
 Hard failures (exit 1):
   syntax     every inline JS <script> passes `node --check`
   data       __DATA__ markers present once, blob parses, every image src exists, every image has alt
-  copy       no em dash in visible copy or in inlined titles/alt/fact displays; no --ban tokens
-  structure  no duplicate data-step; every data-step has a PHASES entry
-  refs       every image id named in the engine exists in __DATA__.images
+  copy       no em dash in visible copy, PHASES strings (tags, labels) or inlined titles/alt/fact
+             displays; no --ban tokens
+  structure  no duplicate data-step; every data-step has a PHASES entry and a data-chapter;
+             every PHASES layer is none, figure or grid
+  refs       every image id named in the engine exists in __DATA__.images; every frame group and
+             focus id exists in __DATA__.annotations (story/annotations.json)
   imgs       every static <img> has non-empty alt and (if it has a src) an existing file
   binds      every data-bind id exists in __DATA__.facts
   offline    no fetch( or XMLHttpRequest: the deck must work by double-click (file://)
@@ -33,6 +36,8 @@ SECTION_STEP = re.compile(r"<section\b[^>]*?data-step\s*=\s*[\"']([^\"']+)[\"']"
 IMG_TAG = re.compile(r"<img\b[^>]*>", re.I)
 IMAGE_ID = re.compile(r"[\"']((?:vision|mood)-\d{2}(?:-[a-z0-9]+)+|plan-level-[a-z0-9]+)[\"']")
 PHASES_BLOCK = re.compile(r"var\s+PHASES\s*=\s*\{(.*?)\n\s*\};", re.S)
+LAYERS = ("none", "figure", "grid")
+STEP_TAG = re.compile(r"<section\b[^>]*?data-step\s*=[^>]*>", re.I)
 PHASE_KEY = re.compile(r"(?m)^\s*[\"']?([A-Za-z0-9_-]+)[\"']?\s*:\s*\{")
 
 
@@ -91,7 +96,7 @@ def main():
 
     # data blob
     blobs = re.findall(re.escape(START) + r"(.*?)" + re.escape(END), html, re.S)
-    data = {"images": {}, "areas": {}, "facts": {}}
+    data = {"images": {}, "annotations": {}, "facts": {}}
     if len(blobs) != 1:
         fails.append("data: expected __DATA__ markers once, found %d" % len(blobs))
     else:
@@ -99,7 +104,7 @@ def main():
             data = json.loads(blobs[0])
         except ValueError as e:
             fails.append("data: blob does not parse: %s" % e)
-    images, facts = data.get("images", {}), data.get("facts", {})
+    images, facts, notes = data.get("images", {}), data.get("facts", {}), data.get("annotations", {})
     if not images:
         fails.append("data: no images inlined; run moodboard-assets/scripts/build_data.py")
     for iid, m in images.items():
@@ -137,6 +142,24 @@ def main():
         fails.append("structure: no `var PHASES = {...};` block found")
     fails += ["structure: data-step %r has no PHASES entry (beat renders nothing)" % s for s in steps if s not in keys]
     warns += ["PHASES entry %r has no section" % k for k in keys if k not in steps]
+    for m in STEP_TAG.finditer(vis):
+        if not (attr(m.group(0), "data-chapter") or "").strip():
+            fails.append("structure: section %r has no data-chapter" % attr(m.group(0), "data-step"))
+    body = pm.group(1) if pm else ""
+    if EM_DASH in body:
+        fails.append("copy: em dash in a PHASES string (tag or label)")
+    for lay in re.findall(r"\blayer\s*:\s*[\"']([^\"']+)[\"']", body):
+        if lay not in LAYERS:
+            fails.append("structure: unknown layer %r (use %s)" % (lay, ", ".join(LAYERS)))
+    for obj in re.findall(r"\{[^{}]*\bgroup\s*:[^{}]*\}", body):
+        im = re.search(r"\bimage\s*:\s*[\"']([^\"']+)", obj)
+        grp = re.search(r"\bgroup\s*:\s*[\"']([^\"']+)", obj).group(1)
+        if im and not any(a.get("group") == grp for a in notes.get(im.group(1), [])):
+            fails.append("refs: frame %s has group %r with no boxes in story/annotations.json" % (im.group(1), grp))
+    ids = {a.get("id") for lst in notes.values() for a in lst}
+    for fid in re.findall(r"\bfocus\s*:\s*[\"']([^\"']+)[\"']", body):
+        if fid not in ids:
+            fails.append("refs: focus %r is not a box id in story/annotations.json" % fid)
 
     # image refs in the engine
     for iid in sorted(set(IMAGE_ID.findall(engine))):

@@ -19,10 +19,13 @@ generous space. It should read like a well-made architect's presentation, not a 
   (`--line`, `--line-strong`), never drop shadows. Only indicator dots are round.
 - **One type family, one ramp.** h1 → h2 → lede → body → note → label. Eyebrows and labels uppercase,
   tracked, small. Exactly one italic `<em>` per headline, in the accent colour.
-- **Photography full-bleed or gridded, never framed with decoration.** Hero images cover the stage with a
-  left-side scrim for the card; mood tiles crop with `object-fit: cover` in an even grid.
-- **The plan is a drawing, treat it like one.** White sheet, hairline outline, areas as translucent accent
-  fills with a crisp stroke, labels as small solid accent chips. Zoom, do not pan around.
+- **Photography gridded or framed by a hairline, never decorated.** Grid tiles crop with `object-fit: cover`;
+  a render in a figure keeps its full frame so its boxes stay true. Cards sit on the plain ground beside the
+  visual, never over a photo on desktop.
+- **Plans and renders are read, not admired.** White sheet or full image, hairline outline, boxes as
+  translucent accent fills with a crisp stroke, labels as small solid accent chips carrying the same number
+  or letter as the card list. Zoom, do not pan around.
+- **Plain ground is a visual too.** A statement beat (`none`) uses space and type only.
 - **Ink hierarchy does the work.** `--ink` for headlines, `--ink-dim` for body, `--ink-mute` for notes and
   labels. `--ink-faint` (3.4:1) never carries text a reader must read.
 
@@ -30,5 +33,5 @@ generous space. It should read like a well-made architect's presentation, not a 
 
 - No rounded cards, pills, soft shadows or gradients as decoration.
 - No second accent colour, no gradient text.
-- No text over a photo without the scrim or a panel behind it.
-- No decorative motion: movement only when the scene changes (crossfade, zoom, reveal).
+- No text over a photo without a panel behind it.
+- No decorative motion: movement only when the scene changes (fade, zoom, reveal).

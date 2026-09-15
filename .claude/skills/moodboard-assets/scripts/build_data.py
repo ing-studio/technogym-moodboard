@@ -3,7 +3,7 @@
 
   python build_data.py [--deck deck/index.html]
 
-Reads assets/catalog.json, story/areas.json and story/facts.json, writes one `window.__DATA__` object
+Reads assets/catalog.json, story/annotations.json and story/facts.json, writes one `window.__DATA__` object
 between the markers
 
   /*__DATA__*/ ... /*__END__*/
@@ -48,7 +48,7 @@ def main():
 
     data = {
         "images": images,
-        "areas": load("story/areas.json", {"levels": {}})["levels"],
+        "annotations": load("story/annotations.json", {"images": {}})["images"],
         "facts": load("story/facts.json", {"facts": {}})["facts"],
     }
 
@@ -62,8 +62,8 @@ def main():
     html = pattern.sub(lambda m: blob, html, count=1)
     with open(a.deck, "w", encoding="utf-8", newline="\n") as fh:
         fh.write(html)
-    print("ok: inlined %d images, %d plan levels, %d facts (%.0f KB blob)"
-          % (len(images), len(data["areas"]), len(data["facts"]), len(blob) / 1024))
+    print("ok: inlined %d images, annotations for %d images, %d facts (%.0f KB blob)"
+          % (len(images), len(data["annotations"]), len(data["facts"]), len(blob) / 1024))
     return 0
 
 

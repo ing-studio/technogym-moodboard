@@ -4,9 +4,14 @@ A scroll story for a gym design project. It shows that a design becomes easier t
 on when the client's vision, our floor plan and the suggested mood are consolidated into one argument,
 and it doubles as a method for building a mood board.
 
+**Core message:** a mood cannot be built from single rooms. It is built from every layer inside a room
+(shell, light, equipment, objects) and from the top view of the whole building (zones, route, depth).
+
 Three chapters, in this order:
-1. **Vision**: the Technogym machinery and spaces the client imagines (`assets/source/01-vision`).
-2. **Floor plan**: our plan, broken into areas and specifics (`assets/source/02-floor-plan`, `story/areas.json`).
+0. **Intro**: plain ground, the claim and the chapters.
+1. **Vision**: the proposed Technogym styling in 3 beats: what is proposed, what we need to look at, what needs
+   to be assessed (`assets/source/01-vision`).
+2. **Floor plan**: our plan, broken into areas and specifics (`assets/source/02-floor-plan`, `story/annotations.json`).
 3. **Mood**: the atmosphere we suggest (`assets/source/03-mood`).
 
 Project specifics (client, claim, areas, numbers) are still to come: see TODOs in `story/brief.md`.
@@ -21,7 +26,7 @@ Project specifics (client, claim, areas, numbers) are still to come: see TODOs i
 assets/source/                     originals, renamed, never edited
 assets/web/                        generated WebP (gitignored)
 assets/catalog.json                titles, alt text, tags, palettes per image
-story/                             brief.md, storyboard.md, areas.json, facts.json
+story/                             brief.md, storyboard.md, annotations.json, facts.json
 deck/index.html                    the deck; deck/build/ holds screenshots (gitignored)
 ```
 

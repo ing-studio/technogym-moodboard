@@ -1,12 +1,21 @@
 {
   "_note": "Every number shown in the deck. Bind with <span data-bind=\"id\">. assumed:true renders a visible * marker. Reuse an id before adding a new one.",
   "facts": {
-    "level_02_stations": {
-      "value": null,
-      "display": "TBD",
-      "unit": "stations",
-      "source": "placeholder: count equipment on plan-level-02",
-      "assumed": true
+    "vision_images": {
+      "value": 7, "display": "7", "unit": "images",
+      "source": "assets/catalog.json: images in chapter 01-vision", "assumed": false
+    },
+    "vision_rooms": {
+      "value": 3, "display": "3", "unit": "rooms",
+      "source": "assets/catalog.json: vision-01, 02, 03 (tag overview)", "assumed": false
+    },
+    "vision_cardio": {
+      "value": 2, "display": "2", "unit": "cardio close-ups",
+      "source": "assets/catalog.json: vision-04, 05 (tag cardio)", "assumed": false
+    },
+    "vision_storage": {
+      "value": 2, "display": "2", "unit": "storage details",
+      "source": "assets/catalog.json: vision-06, 07 (tag storage)", "assumed": false
     }
   }
 }

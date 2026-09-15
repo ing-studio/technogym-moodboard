@@ -10,21 +10,19 @@ How `deck/index.html` works. Read with `engine_skeleton.html` open.
   <style> design system (inlined copy) </style>
 <body>
   #stage                      fixed, full viewport
-    #layer-hero               stacked full-bleed <img>, one .on
-    #layer-plan > .plan-frame > .plan-canvas  <img> + <svg viewBox 0 0 1 1> areas + #plan-labels
-    #layer-mood > .mood-grid  <figure class="tile"> × N
-  #scrim                      left legibility wash, on for hero only
-  .topbar  #rail  #hint       chrome
-  <main id="scroller">        N × <section class="step" data-step="X"><div class="card">…
-  <script> one IIFE: helpers → PHASES → layer functions → enter() → hydrate() → scroll controller
+    #layer-figure > #figure   .fig × 1-2 (label + .plan-frame > .plan-canvas: img, svg boxes, labels) + .strip
+    #layer-grid > .grid       <figure class="tile"> × N
+  .topbar (#chapter)  #rail  #hint   chrome
+  <main id="scroller">        N × <section class="step" data-step="X" data-chapter="01 Vision"><div class="card">…
+  <script> one IIFE: helpers → PHASES → tile/figure/grid functions → enter() → hydrate() → scroll controller
 ```
 
-`__DATA__` shape (built from `assets/catalog.json`, `story/areas.json`, `story/facts.json`):
+`__DATA__` shape (built from `assets/catalog.json`, `story/annotations.json`, `story/facts.json`):
 ```js
-{ images: { "mood-08-kettlebell-wall-oak": { src:"../assets/web/03-mood/….webp", alt, title, tags,
+{ images: { "vision-01-cardio-gallery-oak-ceiling": { src:"../assets/web/01-vision/….webp", alt, title, tags,
             palette:["#…"], web_w, web_h, chapter, orientation } },
-  areas:  { "plan-level-02": [ { id:"cardio", name:"Cardio", box:[x,y,w,h], notes } ] },
-  facts:  { "level_02_stations": { value:24, display:"24", source:"count on plan-level-02", assumed:false } } }
+  annotations: { "plan-level-b1": [ { id:"route", group:"view", n:"B", name:"Route", box:[x,y,w,h] } ] },
+  facts:  { "vision_images": { value:7, display:"7", source:"assets/catalog.json …", assumed:false } } }
 ```
 
 ## PHASES → enter()
@@ -33,46 +31,51 @@ How `deck/index.html` works. Read with `engine_skeleton.html` open.
 
 | layer | fields | what happens |
 |---|---|---|
-| `hero` | `images: [id…]` | full-bleed crossfade every 5 s (off under reduced motion, paused in a hidden tab) |
-| `plan` | `level: id`, `area: id \| null` | plan fitted into the free area; with `area`, one transform zooms to it and dims the rest |
-| `mood` | `images: [id…]` | grid built once per image set; staggered reveal; caption + 4 palette swatches |
+| `none` | | no visual: plain ground (intro, statements) |
+| `figure` | `frames:[{image, group?, label?}]`, `focus?`, `strip?:[{image \| text, tag}]` | 1 or 2 framed images (renders or plans) with the boxes of `group` from annotations; two frames sit side by side (stacked below 720px); `focus` zooms to a box (single frame only); `strip` is a row of tagged tiles under the frames |
+| `grid` | `items:[{image, tag?, size?: "big" \| "wide"}]`, `cols?`, `captions?`, `swatches?` | tile grid built once per beat, staggered reveal; tag top-left, caption + palette swatches bottom |
 
-`enter(id)` returns early if the beat is already active, stops the hero timer, switches the `.on` layer,
-then calls the layer function. Layer functions rebuild DOM only when their image set changes, so
-scrolling back and forth costs nothing.
+`enter(id)` returns early if the beat is already active, switches the `.on` layer, then builds the layer
+for that beat (keyed by step id, so scrolling back and forth rebuilds nothing twice in a row).
 
-**Adding a beat** = a `<section data-step="X">` + `PHASES.X`. Consecutive plan beats on the same `level`
-with different `area` values give a guided tour: the image stays, only the transform moves.
+**Adding a beat** = a `<section data-step="X" data-chapter="…">` + `PHASES.X`. Consecutive figure beats on
+the same plan with different `focus` values give a guided tour.
 
-**Adding a layer type** (e.g. before/after compare): a `#layer-NAME` in `#stage`, add `NAME` to the
-`showLayer` list, an `enterNAME(spec)` function, one `if` in `enter()`, and components in the design system.
+**Adding a layer type**: a `#layer-NAME` in `#stage`, add `NAME` to `LAYERS` (engine) and to `LAYERS` in
+`verify.py`, an `enterNAME(spec, id)` function, one `if` in `enter()`, components in the design system.
 Keep it to transform/opacity animation.
 
-## Plan zoom
+## Boxes and zoom
 
-`.plan-frame` (overflow hidden) and the canvas inside it are sized to fit the free area (right 58% of the viewport; top half below 720px) at the plan's
-aspect ratio. Area boxes are fractions (0-1) of the **trimmed web plan**. To focus area `[x,y,w,h]` in a
-canvas of `W×H` px:
+Boxes are `[x,y,w,h]` fractions of the **web** image (plans are trimmed of white sheet). `group` picks the
+set a beat shows, so one image can carry layers, aspects and issues. `n` is the label (number or letter);
+boxes sharing an `n` show the name once.
+
+Frames are sized by `layoutFigure()` into the free area (right 58% of the viewport; top half below 720px),
+minus the strip. To focus box `[x,y,w,h]` in a frame of `W×H` px:
 
 ```
-s  = min(4, 0.85 * min(1/w, 1/h))           // fill 85% of the canvas, cap at 4×
-tx = W/2 - (x + w/2) * W * s                 // centre the area
+s  = min(4, max(1, web_w / W), 0.85 * min(1/w, 1/h))   // cap at 4× and at the image's own pixels
+tx = W/2 - (x + w/2) * W * s
 ty = H/2 - (y + h/2) * H * s
-transform: translate(tx, ty) scale(s)        // transform-origin 0 0
+transform: translate(tx, ty) scale(s)                  // transform-origin 0 0
 ```
-The frame clips the zoomed canvas, so it never spills under the card or rail. Labels counter-scale with `--inv = 1/s` so text stays the same size; SVG strokes use
-`vector-effect: non-scaling-stroke`. `fitPlan` reruns on resize.
+The pixel cap means a 1200 px render never upscales into blur; only large plans really zoom. The frame
+clips the canvas. Labels counter-scale with `--inv = 1/s`; strokes use `vector-effect: non-scaling-stroke`.
+`layoutFigure` reruns on resize.
 
-To trace a box: open the web plan (`assets/web/02-floor-plan/<id>.webp`) in any viewer that shows pixel
-coordinates, divide by `web_w`/`web_h` from `catalog.json`.
+## Chapters
+
+Each section carries `data-chapter`. The top bar shows the active chapter at once (not debounced); the rail
+leaves a gap where the chapter changes. `verify.py` fails on a section without it.
 
 ## Scroll controller
 
 - **Two IntersectionObservers, no per-scroll layout reads.** `centerIO` (zero-height line at mid-viewport)
   picks the active section; a fling delivers several entries out of order, so it takes the latest `time`.
   `cardIO` (-20% margins) toggles `.card.in`.
-- **140 ms debounced commit.** The rail updates at once, but `enter()` fires only for the beat the reader
-  settles on, so flicking past five beats does not start five zooms.
+- **140 ms debounced commit.** The rail and chapter update at once, but `enter()` fires only for the beat
+  the reader settles on.
 - Without IntersectionObserver every card is shown (content never depends on the script working).
 - The first beat's scene is entered on boot, before any scroll.
 
@@ -84,15 +87,15 @@ and `verify.py` fails on it before anyone sees it.
 
 ## Image performance
 
-- Only `assets/web/` derivatives: photos ≤1600 px, plans ≤3200 px wide (sharp at 2-4× zoom), WebP q82.
-  The whole image set is ~5 MB; a deck showing 15-20 images loads well under that.
+- Only `assets/web/` derivatives: photos ≤1600 px, plans ≤3200 px wide, WebP q82.
 - `width`/`height` attributes are set from the catalog so nothing shifts while images load.
-- `decoding="async"` on every image; the hero and mood DOM is built on first entry, so later chapters do
-  not download until the reader gets near them.
+- `decoding="async"` on every image; figure and grid DOM is built on entry, so later beats do not
+  download until the reader gets near them.
 - Animate transform/opacity only; never width/height/top/left in a transition.
 
 ## Debugging
 
 `window.__APP` = `{state, PHASES, enter, data}`. In the console: `__APP.enter("plan")` forces a scene;
 `__APP.state.id` shows the active one. If a beat is blank: is `data-step` in PHASES (verify.py), do its image
-ids exist in `__APP.data.images`, did `build_data.py` run after the last `make_web.py`?
+ids exist in `__APP.data.images`, does its `group` have boxes in `__APP.data.annotations`, did
+`build_data.py` run after the last `make_web.py`?

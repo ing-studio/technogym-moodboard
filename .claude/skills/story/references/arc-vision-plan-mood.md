@@ -1,23 +1,34 @@
 # Arc: vision → plan → mood
 
-The project default. Answer-first: the claim is stated in the opening, proven through the plan and the mood,
-and restated at the close. Beat counts are a guide; specifics come from `story/brief.md`.
+The project arc. **Core message:** a mood cannot be built from single rooms. It is built from every layer
+inside a room and from the top view of the whole building (zones, route, depth). The vision chapter sets
+that up; the plan and mood chapters answer it. Specifics come from `story/brief.md`.
 
 | # | chapter | beat | visual (PHASES) | job |
 |---|---|---|---|---|
-| 1 | Vision | hook | `hero`: 2-3 Technogym overview renders | what they imagine; state the claim |
-| 2 | Vision | the kit | `hero` or `mood`: equipment details (kettlebell wall, dumbbell rack, treadmill row) | the machinery and finishes that define the expectation |
-| 3 | Floor plan | the building | `plan`: level overview, `area: null` | where it really goes; the turn from picture to space |
-| 4-n | Floor plan | area by area | `plan`: same level, `area: <id>` per beat | each area: what goes there, the one fact that matters |
-| n+1 | Mood | per area | `mood`: 3-6 images tagged for that area | how that area should feel: materials, light, colour |
-| … | Mood | materials | `mood`: material board, veneers, stone | the palette that ties areas together |
-| last | Close | landing | `plan` overview or `hero` | restate the opening claim, now earned |
+| 0 | Introduction | intro | `none`: plain ground | the claim and the three chapters; bridge to the proposal |
+| 1 | 01 Vision | what is proposed | `grid`: all Technogym renders, tagged Room / Cardio / Storage | what the styling is for (generic, made to present equipment), what we have, what it offers |
+| 2 | 01 Vision | what we need to look at | `figure`: a render (group `layers`) beside a plan (group `view`) | the two views: eye-level layers 1-4 (shell, light, equipment, objects) and top-view aspects A-C (zones, route, depth) |
+| 3 | 01 Vision | what needs to be assessed | `figure`: the same plan (group `issues`) + strip of renders | the points only the plan reveals (daylight, density, continuity, coverage); the mood must answer all together |
+| 4-n | 02 Floor plan | the building, then area by area | `figure`: plan level, `focus` per area | each area: zones, route, depth, the one fact that matters |
+| n+1… | 03 Mood | per area, then materials | `grid`: 3-6 images tagged for the area, with swatches | how each area answers the points: materials, light, colour |
+| last | Close | landing | `figure` plan overview or `grid` | restate the claim, now earned |
 
-## Two orderings, pick one in the brief
+## Rules for this arc
 
-- **Chapter order** (default): all plan beats, then all mood beats. Clear, mirrors the folder structure.
-- **Interleaved**: plan area → its mood → next area → its mood. Better when areas feel very different
-  (training floor vs change rooms); the reader never has to hold an area in memory.
+- **Assess, never attack.** Name what the proposal offers before its open points. Phrase each point as a
+  question the design must answer.
+- **Every point names its source and its answer**: the layer or top-view aspect it comes from (in the card,
+  e.g. "Light, depth") and the chapter that answers it (plan or mood).
+- **Numbers and letters carry through**: layer 1-4 and aspect A-C labels on the stage match the card lists;
+  tags on tiles match the numbered points.
+- **Each beat ends on a bridge line** the next beat picks up.
+- **Never name an unconfirmed level** in copy; say "lower-ground floors" until the brief confirms names.
+
+## Ordering
+
+- **Chapter order** (current): all plan beats, then all mood beats.
+- **Interleaved**: plan area → its mood → next area. Better when areas feel very different.
 
 ## Mood tags available in the catalog
 

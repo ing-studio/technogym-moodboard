@@ -1,6 +1,6 @@
 ---
 name: moodboard-assets
-description: Manage the gym project's images and facts: the chapter folders, the naming scheme, renaming/moving new images with hash checks, assets/catalog.json (titles, alt text, tags, palettes), web-sized derivatives with floor-plan whitespace trimmed, plan area boxes and sourced facts, and inlining all of it into the deck. Use when images are added or renamed, areas or numbers change, or the deck's data needs rebuilding.
+description: Manage the gym project's images and facts: the chapter folders, the naming scheme, renaming/moving new images with hash checks, assets/catalog.json (titles, alt text, tags, palettes), web-sized derivatives with floor-plan whitespace trimmed, annotation boxes on renders and plans, sourced facts, and inlining all of it into the deck. Use when images are added or renamed, areas or numbers change, or the deck's data needs rebuilding.
 ---
 
 # Moodboard assets
@@ -18,7 +18,7 @@ assets/web/                    generated WebP derivatives (gitignored, rebuild a
 assets/catalog.json            one entry per image: measured fields + hand-written title/alt/tags
 assets/rename-map.json         input for organize.py (old path → new name + title/alt/tags)
 assets/rename-log.csv          what moved where, with sha256
-story/areas.json               plan areas per level
+story/annotations.json         boxes drawn on images (plan areas, render layers, issues)
 story/facts.json               every on-screen number with its source
 ```
 Originals in `assets/source/` are never edited, only renamed.
@@ -61,20 +61,23 @@ full history. `catalog.py` and `make_web.py` are safe to rerun.
 Hand-written: `title` (2-4 words, no em dash), `alt` (what is visible, one sentence, no "image of"), `tags`
 (one area tag from the arc list plus materials). Everything else is measured.
 
-## areas.json
+## annotations.json
 
 ```json
-{ "levels": { "plan-level-02": [
-  { "id": "cardio", "name": "Cardio", "box": [0.08, 0.05, 0.30, 0.22], "notes": "treadmills along windows" } ] } }
+{ "images": { "plan-level-b1": [
+  { "id": "route", "group": "view", "n": "B", "name": "Route", "box": [0.41, 0.30, 0.12, 0.20] } ] } }
 ```
-`box` = `[x, y, w, h]` as fractions of the **web** plan image (already trimmed of white sheet), so
-pixel coordinates from `assets/web/02-floor-plan/<id>.webp` divided by `web_w`/`web_h`.
+- Keyed by image id; works for plans and renders alike.
+- `group` is the set a beat shows (`layers`, `view`, `issues`, `areas`, …); one image can carry several.
+- `n` is the on-stage label (number or letter) and must match the numbered list in the card.
+- `box` = `[x, y, w, h]` as fractions of the **web** image (plans already trimmed of white sheet), so pixel
+  coordinates from `assets/web/<chapter>/<id>.webp` divided by `web_w`/`web_h`. Check with a screenshot.
 
 ## facts.json
 
 ```json
-{ "facts": { "level_02_stations": { "value": 24, "display": "24", "unit": "stations",
-  "source": "counted on plan-level-02", "assumed": false } } }
+{ "facts": { "vision_images": { "value": 7, "display": "7", "unit": "images",
+  "source": "assets/catalog.json: images in chapter 01-vision", "assumed": false } } }
 ```
 - Every number on screen is a fact id bound with `data-bind`; nothing typed in the HTML.
 - `source` says where it comes from (a plan count, a spec sheet, the client brief). A number with no real

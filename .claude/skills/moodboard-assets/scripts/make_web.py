@@ -10,7 +10,7 @@
   then stays sharp. The crop box in source pixels is stored as `trim` so areas can be traced back.
 - Skips files whose derivative is newer than the source unless --force.
 
-Area boxes in story/areas.json are fractions (0-1) of the WEB plan image, i.e. of the trimmed drawing.
+Boxes in story/annotations.json are fractions (0-1) of the WEB image, i.e. of the trimmed drawing for plans.
 """
 
 import argparse
