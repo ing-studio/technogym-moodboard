@@ -8,6 +8,9 @@
 - Floor plans: the sheets are 7016 px wide and mostly white paper, so each is TRIMMED to the drawing's
   bounding box (plus a small margin) before resizing to <= 3200 px wide. Zooming the deck into one area
   then stays sharp. The crop box in source pixels is stored as `trim` so areas can be traced back.
+  The white paper is then made TRANSPARENT ("colour to alpha" against white), so a plan sits directly on
+  the deck's ground with no sheet behind it. Lines and hatching keep their exact look over any colour,
+  and it still works while a layer fades (a CSS blend mode would not).
 - Skips files whose derivative is newer than the source unless --force.
 
 Boxes in story/annotations.json are fractions (0-1) of the WEB image, i.e. of the trimmed drawing for plans.
@@ -18,7 +21,7 @@ import json
 import os
 import sys
 
-from PIL import Image, ImageChops, ImageOps
+from PIL import Image, ImageChops, ImageMath, ImageOps
 
 CATALOG = "assets/catalog.json"
 WEB = "assets/web"
@@ -40,6 +43,17 @@ def trim_box(im, margin=0.015):
     m = int(max(im.width, im.height) * margin)
     return (max(0, int(bb[0] * s) - m), max(0, int(bb[1] * s) - m),
             min(im.width, int(bb[2] * s) + m), min(im.height, int(bb[3] * s) + m))
+
+
+def sheet_to_alpha(im, floor=14):
+    """White paper -> transparency. alpha = 255 - min(r,g,b); colours are un-mixed from white so that the
+    drawing composited on any ground equals the original multiplied onto it. `floor` removes JPEG paper noise."""
+    r, g, b = im.split()
+    a_raw = ImageChops.invert(ImageChops.darker(ImageChops.darker(r, g), b))
+    unmix = lambda c: ImageMath.lambda_eval(
+        lambda A: A["convert"](255 - (255 - A["c"]) * 255 / A["max"](A["a"], 1), "L"), c=c, a=a_raw)
+    alpha = a_raw.point(lambda v: 0 if v < floor else min(255, (v - floor) * 255 // (255 - floor)))
+    return Image.merge("RGBA", [unmix(r), unmix(g), unmix(b), alpha])
 
 
 def main():
@@ -72,6 +86,7 @@ def main():
                 e["trim"] = list(box)
                 if im.width > PLAN_MAX_W:
                     im = im.resize((PLAN_MAX_W, round(im.height * PLAN_MAX_W / im.width)), Image.LANCZOS)
+                im = sheet_to_alpha(im)
             else:
                 im.thumbnail((PHOTO_MAX, PHOTO_MAX), Image.LANCZOS)
             im.save(dst, "WEBP", quality=QUALITY, method=6)

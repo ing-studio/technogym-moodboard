@@ -117,6 +117,10 @@ while (Date.now() - t0 < SETTLE) {
   if (done) break;
   await sleep(250);
 }
+// scroll again once images have settled: a scroll made while the page was still loading can go unobserved,
+// leaving the first beat active. Jump to the top and back so the observers see a real change.
+await evaluate(`(()=>{const e=document.querySelector('[data-step=${JSON.stringify(beat)}]');
+  window.scrollTo(0,0); requestAnimationFrame(()=>requestAnimationFrame(()=>e.scrollIntoView()));})()`);
 await sleep(HOLD);
 
 const errors = await evaluate(`(window.__APP && window.__APP.state && window.__APP.state.id) || "none"`);

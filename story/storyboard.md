@@ -1,63 +1,99 @@
 # Storyboard
 
-Stage 2. One block per beat, copy at final length. A person approves before any HTML edit.
-Arc and rules: `.claude/skills/story/`. Visual spec = the `PHASES` entry the beat gets.
+Stage 2. One block per beat, copy at final length. Arc and rules: `.claude/skills/story/`.
+Visual spec = the `PHASES` entry the beat gets.
 
-**Core message:** a mood cannot be built from single rooms. It is built from all aspects at once: every
-layer inside a room, and the top view of the whole building (zones, route, depth).
+**Core message:** a mood cannot be built from single rooms. It is built from every layer inside a room and
+from the top view of the whole building. Read that way, the plan asks for natural materials, above all wood,
+and the mood we propose is both functional and good looking.
 
 | step id | chapter | eyebrow | headline (accent) | visual (PHASES) | facts |
 |---|---|---|---|---|---|
-| intro | Introduction | Gym design, a mood board method | A mood is built from the *whole* building | none: plain ground | |
-| vision-proposed | 01 Vision | What is proposed | A styling made to *present* the equipment | grid: vision-01 (big), 02, 03 (wide), 04, 05, 06, 07; tags Room / Cardio / Storage | vision_images, vision_rooms, vision_cardio, vision_storage |
-| vision-look | 01 Vision | What we need to look at | Read it in *layers* | figure: vision-01 group layers (no plan; the plan first appears in vision-assess) | |
-| vision-assess | 01 Vision | What needs to be assessed | Four points to *assess* before we build the mood | figure: plan-level-b1 group issues; strip 02 "1 Daylight", 03 "2 Density", 01 "3 Continuity", text "4 Coverage" | |
-| plan | 02 Floor plan | The building from above | Where the mood has to *work* | figure: plan-level-02 | |
-| mood | 03 Mood | Mood | How it should *feel* | grid: mood-08, 21, 35, 42, 44, 01 | |
+| intro | Introduction | Gym design, a mood board method | A mood is built from the *whole* building | none | |
+| vision-proposed | 01 Vision | What is proposed | A styling made to *present* the equipment | grid: vision-01 to 07 | vision_* |
+| vision-look | 01 Vision | What we need to look at | Read it in *layers* | figure: vision-01, group layers | |
+| vision-assess | 01 Vision | What needs to be assessed | Four points to *assess* before we build the mood | figure: plan-level-b1, group issues; strip | |
+| plan-stack | 02 Floor plan | Top down | Read the building from the *top* down | figure: 6 plans, 2 columns (above ground, below ground) | plan_levels |
+| plan-zones | 02 Floor plan | What each floor is for | Every floor has a *job* | figure: 6 plans, group zones | |
+| plan-route | 02 Floor plan | How members move | One visit, several *floors* | figure: 6 plans, group route | |
+| plan-light | 02 Floor plan | What the plan asks | The same mood, with and without *daylight* | figure: level 3 + level -2, group light | levels_above_ground, levels_below_ground |
+| mood-wood | 03 Mood | Why natural materials | Why the mood starts with *wood* | grid: mood-22, 08, 42, 21 tagged 1-4 | |
+| mood-spine | 03 Mood | Our proposal | A timber spine through *every* floor | grid: mood-44 (big), 35, 04, 09, 20 | |
+| mood-function | 03 Mood | Functional and beautiful | Built to work, made to be *seen* | grid: vision-06, mood-01, 18, 12 | |
+| mood-close | 03 Mood | The mood we suggest | A mood built from the *whole* building | grid: mood-48, 19, 46, 47 with swatches (no images with third-party logos) | |
 
-## Copy
+## Copy: 02 Floor plan
 
-**intro**
-- Lede: A mood board is often a set of beautiful rooms. We build ours the other way round: from what was proposed, through everything it has to answer, down to the plan of every floor.
-- Chapters: 01 Vision, what is proposed and how to read it. 02 Floor plan, the building from above. 03 Mood, what we suggest.
-- Bridge: We start with the proposal.
+**plan-stack**
+- Lede: Before choosing a single finish, we lay out all 6 floors. The mood has to work on each of them, and on the way between them.
+- Note: Level numbers follow the drawing files and are still to be confirmed.
+- Bridge: First, what each floor is for.
 
-**vision-proposed**
-- Body: Technogym proposes a generic styling. Its purpose is to show the equipment line at its best, so each image is a single ideal room, seen at eye level, in a different setting.
-- What we have: 7 images: 3 rooms, 2 cardio close-ups, 2 storage details.
-- What it offers: A calm, warm direction: sand-coloured machines, natural timber, soft daylight.
-- Bridge: It shows rooms. A gym is a building, so we need to look further.
+**plan-zones**
+- Lede: Sorted by use, the floors fall into four kinds of space.
+- R Recover: the roof, an open deck with loungers.
+- T Train: the upper floors, with cardio along the windows and strength deeper in.
+- S Studio: a group studio upstairs, a cycling room and a boxing ring below ground.
+- C Change: at the bottom and on the roof, with a locker hall, private cabins and a lounge by the stair.
+- Note: Zones are our reading of the drawings.
+- Bridge: A single visit uses several of them.
 
-**vision-look**
-- Lede: A render shows one room at eye level. Every picture holds four layers, and each one is a separate decision.
-- Layers: 1 Shell, ceiling, walls and floor. 2 Light, daylight and artificial light. 3 Equipment, the Technogym line. 4 Objects, storage, rugs, art and planting.
-- Note: Only layer 3 comes from Technogym. Everything else is designed for this building.
-- Bridge: Layers explain a room. To see how the rooms work together, we look from above.
+**plan-route**
+- Lede: Changing sits at the bottom and at the top, training and studios in between. Every visit climbs or descends through the same stairs, so the route is where the mood must never break.
+- Note: A room-by-room styling cannot see this. Only the top view shows it.
+- Bridge: On the way, the light changes.
 
-**vision-assess**
-- Lede: From above, three more aspects appear: zones, route and depth. Read together with the layers, they raise four points. None of them rules the styling out.
-- 1 Daylight (light, depth): Every render relies on large windows and a view. Deep and lower-ground floors have neither, so the mood cannot depend on daylight.
-- 2 Density (equipment, zones): The renders show a few machines in open space. The plan places rows of stations, so the calm has to survive a full floor.
-- 3 Continuity (route): Each render is a separate room in a different place. Members move through one sequence, so the mood has to hold from the entrance to the last studio.
-- 4 Coverage (zones, route): Only training is shown. Arrival, changing rooms and circulation are on the plan and still need a styling.
-- Landing: The mood we suggest answers all four together: every layer, every zone, every floor.
-- Bridge: That is why the plan comes before the mood.
+**plan-light**
+- Lede: 4 floors look out through long glazed facades. 2 have no windows at all. A finish chosen from a sunlit render will not survive the change.
+- The plan asks the mood to: 1 work in daylight and without it; 2 stay calm on a full training floor; 3 run unbroken along the route, floor to floor; 4 care for changing and recovery as much as for training.
+- Landing: One material family does all four: natural wood, with stone and plaster.
+- Bridge: The mood chapter shows why, and how.
 
-**plan** (opener; the rest of the chapter comes with the specifics)
-- Body: Floor by floor, the plan shows the zones, the route and the depth that the four points depend on.
+## Copy: 03 Mood
 
-**mood**: placeholder until specifics arrive. It answers points 1 to 4 and builds on "what it offers".
+**mood-wood**
+- Lede: Each requirement from the plan points to the same material.
+- 1 Daylight: oak, stone and plaster stay warm under artificial light, so the lower floors feel as calm as the sunlit ones.
+- 2 Density: timber slats over acoustic backing soften a full floor, and oak storage walls keep equipment off it.
+- 3 Continuity: one family of oak, stone and plaster on every floor makes six floors read as one place.
+- 4 Coverage: lockers, benches and lounges in the same wood give changing and recovery the care training gets.
+- Note: Wood is not decoration here. Without it, each of the four points needs a separate fix.
+- Bridge: So we give timber a structure.
+
+**mood-spine**
+- Lede: One oak core runs from the lower ground to the roof. Every floor grows from it and adds one companion material for its job.
+- Core: oak meeting travertine, with bronze details at every stair.
+- Roof: oak with plaster and linen, open and light for recovery.
+- Training floors: oak with steel, built for heavy daily use.
+- Studios: oak with stone and focused, low light.
+- Lower ground: oak lockers and warm cove light where daylight never reaches.
+- Bridge: It has to work as hard as it looks.
+
+**mood-function**
+- Lede: The mood is not a layer added at the end. Each timber element solves something the plan asks for.
+- Stores: an oak wall of pegs keeps weights off the floor and on display.
+- Quiets: slatted ceilings over acoustic backing take the edge off a busy floor.
+- Lasts: solid oak with rounded edges is sanded and refinished, not replaced.
+- Guides: lit timber shelving and warm light lines lead members from the stair to the floor.
+- Bridge: Put together, this is the mood we suggest.
+
+**mood-close**
+- Lede: Read from the top view, tested on every floor, made of materials that work in any light. That is the difference between a styling and a mood we can build.
+- Palette: oak, walnut, travertine, plaster, linen, a touch of bronze.
 
 ## Situation, turn, landing
 
 - Situation: the proposal is a set of ideal rooms (vision-proposed).
-- Turn: a room read in layers is still only one room (vision-look); the plan adds zones, route and depth (vision-assess).
-- Landing: the four points only the plan reveals; the mood must answer them together (vision-assess).
+- Turn: from above, the building asks for more than a room can show (vision-assess to plan-light).
+- Landing: natural wood answers every floor, and the timber spine turns that into a mood we can build (mood-wood to mood-close).
 
 ## Review board
 
 | persona | attack | resolution |
 |---|---|---|
-| Interior designer | Layer boxes on a render are approximate | Boxes mark the zone of each layer, not exact outlines; checked in screenshots |
-| Client (gym owner) | "Generic" could sound dismissive of the supplier | Beat 1 names what the styling offers; points are framed as questions |
-| Narrative editor | Level -1 name not confirmed | Copy never names a level; plan alt text flagged in the brief |
+| Interior designer | "Wood everywhere" can look heavy and dated | One oak core plus one companion material per floor; plaster, stone and linen keep upper floors light |
+| Interior designer | Timber near showers and under dropped weights | Oak for lockers, benches, walls and ceilings; wet and impact floors stay stone and rubber (named as companions, not in scope of this chapter) |
+| Client (gym owner) | Is this more expensive than the proposal? | Not claimed either way; "lasts" beat argues refinish over replace. Cost is out of scope of this deck |
+| Client (gym owner) | Level numbers and zones | Marked as our reading and still to be confirmed (notes on plan-stack and plan-zones, * on floor counts) |
+| Narrative editor | Acoustic and warmth claims have no numbers | Phrased as design intent, no figures; nothing on screen implies a measurement |
+| Narrative editor | Too many beats | 12 beats, each one question; plan chapter 4, mood chapter 4 |

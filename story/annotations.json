@@ -1,5 +1,5 @@
 {
-  "_note": "Boxes drawn on images, keyed by image id. box = [x, y, w, h] as fractions of the web image (plans: trimmed). group selects which boxes a beat shows; n is the label number or letter.",
+  "_note": "Boxes drawn on images, keyed by image id. box = [x, y, w, h] as fractions of the web image (plans: trimmed). group selects which boxes a beat shows; n is the label letter or number (empty: name only). Plan zones and stairs are our reading of the drawings.",
   "images": {
     "vision-01-cardio-gallery-oak-ceiling": [
       { "id": "shell-ceiling", "group": "layers", "n": "1", "name": "Shell", "box": [0.34, 0.0, 0.46, 0.28] },
@@ -9,11 +9,48 @@
       { "id": "objects-weights", "group": "layers", "n": "4", "name": "Objects", "box": [0.0, 0.6, 0.34, 0.39] },
       { "id": "objects-art", "group": "layers", "n": "4", "name": "Objects", "box": [0.43, 0.31, 0.13, 0.25] }
     ],
+    "plan-level-05": [
+      { "id": "l5-change", "group": "zones", "n": "C", "name": "Change", "box": [0.03, 0.05, 0.18, 0.87] },
+      { "id": "l5-deck", "group": "zones", "n": "R", "name": "Recover", "box": [0.73, 0.09, 0.23, 0.34] },
+      { "id": "l5-open", "group": "zones", "n": "R", "name": "Recover", "box": [0.24, 0.46, 0.71, 0.41] },
+      { "id": "l5-stair", "group": "route", "n": "", "name": "Stair", "box": [0.48, 0.09, 0.24, 0.21] }
+    ],
+    "plan-level-04": [
+      { "id": "l4-studio", "group": "zones", "n": "S", "name": "Studio", "box": [0.035, 0.06, 0.17, 0.86] },
+      { "id": "l4-train", "group": "zones", "n": "T", "name": "Train", "box": [0.21, 0.06, 0.585, 0.86] },
+      { "id": "l4-cardio", "group": "zones", "n": "T", "name": "Train", "box": [0.8, 0.06, 0.165, 0.86] },
+      { "id": "l4-stair-main", "group": "route", "n": "", "name": "Stair", "box": [0.48, 0.08, 0.12, 0.22] },
+      { "id": "l4-stair-inner", "group": "route", "n": "", "name": "Stair", "box": [0.25, 0.31, 0.12, 0.2] }
+    ],
+    "plan-level-03": [
+      { "id": "l3-train", "group": "zones", "n": "T", "name": "Train", "box": [0.035, 0.06, 0.93, 0.86] },
+      { "id": "l3-stair-main", "group": "route", "n": "", "name": "Stair", "box": [0.515, 0.06, 0.12, 0.23] },
+      { "id": "l3-stair-inner", "group": "route", "n": "", "name": "Stair", "box": [0.25, 0.31, 0.12, 0.2] },
+      { "id": "l3-daylight", "group": "light", "n": "", "name": "Daylight", "box": [0.035, 0.84, 0.93, 0.09] }
+    ],
+    "plan-level-02": [
+      { "id": "l2-train", "group": "zones", "n": "T", "name": "Train", "box": [0.035, 0.05, 0.93, 0.79] },
+      { "id": "l2-stair-main", "group": "route", "n": "", "name": "Stair", "box": [0.515, 0.1, 0.09, 0.16] },
+      { "id": "l2-stair-inner", "group": "route", "n": "", "name": "Stair", "box": [0.25, 0.28, 0.12, 0.18] }
+    ],
     "plan-level-b1": [
       { "id": "daylight", "group": "issues", "n": "1", "name": "Daylight", "box": [0.03, 0.31, 0.38, 0.59] },
       { "id": "density", "group": "issues", "n": "2", "name": "Density", "box": [0.19, 0.02, 0.27, 0.17] },
       { "id": "continuity", "group": "issues", "n": "3", "name": "Continuity", "box": [0.41, 0.3, 0.12, 0.2] },
-      { "id": "coverage", "group": "issues", "n": "4", "name": "Coverage", "box": [0.52, 0.09, 0.14, 0.06] }
+      { "id": "coverage", "group": "issues", "n": "4", "name": "Coverage", "box": [0.52, 0.09, 0.14, 0.06] },
+      { "id": "b1-cycling", "group": "zones", "n": "S", "name": "Studio", "box": [0.19, 0.02, 0.27, 0.17] },
+      { "id": "b1-boxing", "group": "zones", "n": "S", "name": "Studio", "box": [0.535, 0.3, 0.25, 0.28] },
+      { "id": "b1-train", "group": "zones", "n": "T", "name": "Train", "box": [0.47, 0.02, 0.5, 0.27] },
+      { "id": "b1-stair-main", "group": "route", "n": "", "name": "Stair", "box": [0.565, 0.02, 0.18, 0.06] },
+      { "id": "b1-stair-inner", "group": "route", "n": "", "name": "Stair", "box": [0.41, 0.39, 0.06, 0.1] }
+    ],
+    "plan-level-b2": [
+      { "id": "b2-lockers", "group": "zones", "n": "C", "name": "Change", "box": [0.52, 0.3, 0.27, 0.39] },
+      { "id": "b2-changing", "group": "zones", "n": "C", "name": "Change", "box": [0.52, 0.18, 0.32, 0.12] },
+      { "id": "b2-cabins", "group": "zones", "n": "C", "name": "Change", "box": [0.03, 0.3, 0.39, 0.6] },
+      { "id": "b2-stair-main", "group": "route", "n": "", "name": "Stair", "box": [0.595, 0.03, 0.1, 0.05] },
+      { "id": "b2-stair-inner", "group": "route", "n": "", "name": "Stair", "box": [0.415, 0.39, 0.055, 0.1] },
+      { "id": "b2-no-daylight", "group": "light", "n": "", "name": "No daylight", "box": [0.03, 0.03, 0.94, 0.94] }
     ]
   }
 }

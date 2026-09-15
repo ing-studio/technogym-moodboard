@@ -46,6 +46,8 @@ on the left; a fixed stage on the right shows the visual for the beat the reader
 - **Contrast**: body text ≥ 4.5:1 on its ground. `--ink-faint` is for large or decorative text only.
 - **Responsive at 720px**: cards drop to the bottom, the visual takes the top half.
 - **Web images only** in the deck (`assets/web/`), never `assets/source/` originals.
+- **Floor plans have no background.** Transparent WebP from `make_web.py`, no frame, outline-only boxes.
+- **Beats are numbered by the engine** (eyebrow counter, `05 / 12` in the top bar); never type them.
 
 ## What still needs a person
 

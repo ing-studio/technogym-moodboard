@@ -241,7 +241,7 @@
       "web": "assets/web/02-floor-plan/plan-level-02.webp",
       "web_w": 3200,
       "web_h": 1384,
-      "web_bytes": 187678
+      "web_bytes": 635176
     },
     {
       "id": "plan-level-03",
@@ -275,7 +275,7 @@
       "web": "assets/web/02-floor-plan/plan-level-03.webp",
       "web_w": 3200,
       "web_h": 1252,
-      "web_bytes": 172222
+      "web_bytes": 583450
     },
     {
       "id": "plan-level-04",
@@ -310,7 +310,7 @@
       "web": "assets/web/02-floor-plan/plan-level-04.webp",
       "web_w": 3200,
       "web_h": 1252,
-      "web_bytes": 146102
+      "web_bytes": 493326
     },
     {
       "id": "plan-level-05",
@@ -344,7 +344,7 @@
       "web": "assets/web/02-floor-plan/plan-level-05.webp",
       "web_w": 3200,
       "web_h": 1252,
-      "web_bytes": 53298
+      "web_bytes": 204512
     },
     {
       "id": "plan-level-b1",
@@ -379,7 +379,7 @@
       "web": "assets/web/02-floor-plan/plan-level-b1.webp",
       "web_w": 3200,
       "web_h": 3848,
-      "web_bytes": 198164
+      "web_bytes": 664012
     },
     {
       "id": "plan-level-b2",
@@ -414,7 +414,7 @@
       "web": "assets/web/02-floor-plan/plan-level-b2.webp",
       "web_w": 3200,
       "web_h": 3846,
-      "web_bytes": 161970
+      "web_bytes": 777438
     },
     {
       "id": "mood-01-cardio-track-timber-ceiling",

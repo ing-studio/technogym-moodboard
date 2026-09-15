@@ -11,8 +11,10 @@ Three chapters, in this order:
 0. **Intro**: plain ground, the claim and the chapters.
 1. **Vision**: the proposed Technogym styling in 3 beats: what is proposed, what we need to look at, what needs
    to be assessed (`assets/source/01-vision`).
-2. **Floor plan**: our plan, broken into areas and specifics (`assets/source/02-floor-plan`, `story/annotations.json`).
-3. **Mood**: the atmosphere we suggest (`assets/source/03-mood`).
+2. **Floor plan**: 4 beats read top down: all floors, zones, route, light and the four requirements
+   (`assets/source/02-floor-plan`, `story/annotations.json`).
+3. **Mood**: 4 beats: why wood, the timber spine proposal, functional and beautiful, the palette
+   (`assets/source/03-mood`).
 
 Project specifics (client, claim, areas, numbers) are still to come: see TODOs in `story/brief.md`.
 
@@ -47,5 +49,6 @@ Use `python`, not `python3` (Store stub on this machine). Node 24 is installed.
 - Every on-screen number comes from `story/facts.json` with a source; assumptions show `*`.
 - Every image has alt text; no em dashes in visible copy; no `fetch()` (deck opens by double-click).
 - Light warm ground, one bronze accent, square boxes, one type family (`.claude/skills/scrollytelling/references/design.md`).
+- Floor plans have no background: transparent drawings on the page, outline-only boxes. Beats are numbered by the engine.
 - Run `verify.py` after every deck edit; photograph beats with `shotbeat.mjs` before handover.
 - Never edit `assets/source/` or the `__DATA__` blob by hand.

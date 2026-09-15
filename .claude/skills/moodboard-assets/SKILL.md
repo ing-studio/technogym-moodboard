@@ -42,7 +42,7 @@ python .claude/skills/moodboard-assets/scripts/contact_sheet.py assets/inbox --o
 python .claude/skills/moodboard-assets/scripts/organize.py --plan    # validate, write log
 python .claude/skills/moodboard-assets/scripts/organize.py --apply   # move, verify hashes, seed catalog
 python .claude/skills/moodboard-assets/scripts/catalog.py --check    # measure, keep hand fields, fail on empty alt
-python .claude/skills/moodboard-assets/scripts/make_web.py           # WebP derivatives, plan trim
+python .claude/skills/moodboard-assets/scripts/make_web.py           # WebP derivatives; plans trimmed, paper made transparent
 python .claude/skills/moodboard-assets/scripts/build_data.py         # inline into deck/index.html
 python .claude/skills/scrollytelling/scripts/verify.py deck/index.html
 ```

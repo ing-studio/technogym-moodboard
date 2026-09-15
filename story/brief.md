@@ -19,4 +19,8 @@ Stage 0 of the scrollyteller workflow. A person confirms this page before any st
 ## Notes
 
 - Floor-plan level names come from the original file names (-2, -1, 2..5). Confirm against the
-  architect's drawings and note any correction here.
+  architect's drawings and note any correction here. The deck marks the floor counts with `*` until then.
+- Zones (Recover, Train, Studio, Change), stairs and glazed facades are our reading of the drawings
+  (`story/annotations.json`). Confirm in particular: the roof deck and open area on level 5, the private
+  cabins on level -2, the boxing ring on level -1.
+- Mood proposal: "timber spine", one oak core through every floor plus one companion material per floor.

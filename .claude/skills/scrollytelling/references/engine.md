@@ -32,7 +32,7 @@ How `deck/index.html` works. Read with `engine_skeleton.html` open.
 | layer | fields | what happens |
 |---|---|---|
 | `none` | | no visual: plain ground (intro, statements) |
-| `figure` | `frames:[{image, group?, label?}]`, `focus?`, `strip?:[{image \| text, tag}]` | 1 or 2 framed images (renders or plans) with the boxes of `group` from annotations; two frames sit side by side (stacked below 720px); `focus` zooms to a box (single frame only); `strip` is a row of tagged tiles under the frames |
+| `figure` | `frames:[{image, group?, label?, col?}]`, `widths?`, `focus?`, `strip?:[{image \| text, tag}]` | images with the boxes of `group` from annotations; frames without `col` sit side by side (stacked below 720px); frames with `col` stack in that column and `widths` weights the columns (the building: levels 5 to 2 in column 0, -1 and -2 in column 1); `focus` zooms to a box (single frame only); `strip` is a row of tagged tiles under the frames. Floor plans get `.sheet`: transparent drawing, no frame, outline-only boxes |
 | `grid` | `items:[{image, tag?, size?: "big" \| "wide"}]`, `cols?`, `captions?`, `swatches?` | tile grid built once per beat, staggered reveal; tag top-left, caption + palette swatches bottom |
 
 `enter(id)` returns early if the beat is already active, switches the `.on` layer, then builds the layer
@@ -68,6 +68,10 @@ clips the canvas. Labels counter-scale with `--inv = 1/s`; strokes use `vector-e
 
 Each section carries `data-chapter`. The top bar shows the active chapter at once (not debounced); the rail
 leaves a gap where the chapter changes. `verify.py` fails on a section without it.
+
+Beats are numbered automatically: a CSS counter puts the beat number (01, 02 …) at the start of every
+eyebrow, and the top bar shows `05 / 12` beside the chapter. Never type beat numbers into copy; moving a
+section renumbers everything.
 
 ## Scroll controller
 

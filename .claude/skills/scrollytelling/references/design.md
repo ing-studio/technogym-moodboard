@@ -22,9 +22,13 @@ generous space. It should read like a well-made architect's presentation, not a 
 - **Photography gridded or framed by a hairline, never decorated.** Grid tiles crop with `object-fit: cover`;
   a render in a figure keeps its full frame so its boxes stay true. Cards sit on the plain ground beside the
   visual, never over a photo on desktop.
-- **Plans and renders are read, not admired.** White sheet or full image, hairline outline, boxes as
-  translucent accent fills with a crisp stroke, labels as small solid accent chips carrying the same number
-  or letter as the card list. Zoom, do not pan around.
+- **Floor plans sit on the page, not on a sheet.** Plans are transparent drawings (`make_web.py` removes the
+  white paper), shown with no frame, no outline and no fill, so they blend into the scroll. Boxes on plans
+  are accent outlines only; labels are small solid accent chips with the same letter or number as the card
+  list. Zoom fades the edges instead of cutting them. Never put a plan back on a white or tinted panel.
+- **Renders are read, not admired.** Full image, hairline outline, boxes as translucent accent fills with a
+  crisp stroke. Zoom, do not pan around.
+- **Beats are numbered.** Each eyebrow starts with its beat number; the top bar shows `05 / 12`.
 - **Plain ground is a visual too.** A statement beat (`none`) uses space and type only.
 - **Ink hierarchy does the work.** `--ink` for headlines, `--ink-dim` for body, `--ink-mute` for notes and
   labels. `--ink-faint` (3.4:1) never carries text a reader must read.
