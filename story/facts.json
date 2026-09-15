@@ -1,0 +1,12 @@
+{
+  "_note": "Every number shown in the deck. Bind with <span data-bind=\"id\">. assumed:true renders a visible * marker. Reuse an id before adding a new one.",
+  "facts": {
+    "level_02_stations": {
+      "value": null,
+      "display": "TBD",
+      "unit": "stations",
+      "source": "placeholder: count equipment on plan-level-02",
+      "assumed": true
+    }
+  }
+}

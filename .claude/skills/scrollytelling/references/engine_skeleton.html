@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gym Mood Board</title>
+<!-- All deck data lives here. Never edit by hand: run moodboard-assets/scripts/build_data.py -->
+<script>window.__DATA__ = /*__DATA__*/{"images":{},"areas":{},"facts":{}}/*__END__*/;</script>
+<style>
+/* Inlined copy of .claude/skills/scrollytelling/references/design_system.css. Keep them in sync. */
+:root{
+  --bg:#f4efe7; --surface:#ebe4d8; --surface-2:#e2d9ca;
+  --ink:#1f1a14; --ink-dim:#4a4238; --ink-mute:#6b6155; --ink-faint:#8a7f71;
+  --line:rgba(31,26,20,.12); --line-soft:rgba(31,26,20,.07); --line-strong:rgba(31,26,20,.24);
+  --accent:#8a5a2b; --accent-soft:rgba(138,90,43,.10); --accent-mid:rgba(138,90,43,.22);
+  --font:"Helvetica Neue","Helvetica","Arial",sans-serif;
+  --pad:clamp(20px,4vw,60px); --r:0; --r-dot:50%;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:var(--font);
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{overflow-x:hidden}
+img{display:block;max-width:100%}
+.skip{position:absolute;left:-9999px;top:8px;z-index:20;background:var(--ink);color:var(--bg);padding:8px 12px}
+.skip:focus{left:8px}
+#stage{position:fixed;inset:0;z-index:0;overflow:hidden;background:var(--bg)}
+.layer{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .8s ease,visibility 0s linear .8s}
+.layer.on{opacity:1;visibility:visible;transition:opacity .8s ease}
+#layer-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.2s ease}
+#layer-hero img.on{opacity:1}
+.plan-frame{position:absolute;overflow:hidden;background:#fff;outline:1px solid var(--line)}   /* clips the zoom */
+.plan-canvas{position:absolute;left:0;top:0;transform-origin:0 0;transition:transform 1.1s var(--ease)}
+.plan-canvas img{width:100%;height:100%}
+#plan-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+#plan-svg .area{fill:var(--accent-soft);stroke:var(--accent);stroke-width:1.5;vector-effect:non-scaling-stroke;
+  transition:fill .5s ease,opacity .5s ease}
+#plan-svg .area.focus{fill:var(--accent-mid)}
+.plan-canvas.has-focus .area:not(.focus),.plan-canvas.has-focus .area-label:not(.focus){opacity:.35}
+#plan-labels{position:absolute;inset:0;pointer-events:none}
+.area-label{position:absolute;transform:translateY(-100%) scale(var(--inv,1));transform-origin:0 100%;
+  font:600 11px/1 var(--font);letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;
+  color:var(--bg);background:var(--accent);padding:5px 7px;transition:opacity .5s ease}
+.mood-grid{position:absolute;left:38vw;right:4vw;top:11vh;bottom:8vh;display:grid;
+  grid-template-columns:repeat(3,1fr);grid-auto-rows:1fr;gap:10px}
+.tile{position:relative;margin:0;overflow:hidden;background:var(--surface);
+  opacity:0;transform:translateY(16px);transition:opacity .7s var(--ease),transform .7s var(--ease);
+  transition-delay:calc(var(--i,0) * 90ms)}
+.mood-grid.in .tile{opacity:1;transform:none}
+.tile img{width:100%;height:100%;object-fit:cover}
+.tile figcaption{position:absolute;left:0;bottom:0;display:flex;align-items:center;gap:8px;
+  font:600 11px/1 var(--font);letter-spacing:.1em;text-transform:uppercase;color:var(--ink);
+  background:rgba(244,239,231,.92);padding:6px 8px}
+.swatches{display:flex;gap:0}
+.swatches span{width:10px;height:10px;border:1px solid var(--line)}
+#scrim{position:fixed;inset:0;z-index:2;pointer-events:none;opacity:0;transition:opacity .8s ease;
+  background:linear-gradient(90deg,rgba(244,239,231,.95) 0%,rgba(244,239,231,.88) 26%,rgba(244,239,231,.25) 44%,transparent 56%)}
+body[data-layer="hero"] #scrim{opacity:1}
+#scroller{position:relative;z-index:5;width:100%;pointer-events:none}
+section.step{min-height:100vh;display:flex;align-items:center;padding:13vh var(--pad);pointer-events:none}
+section.step.tall{min-height:140vh}
+.card{max-width:min(29rem,32vw);opacity:0;transform:translateY(24px);pointer-events:auto;
+  transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.card.in{opacity:1;transform:none}
+.card.panel{background:rgba(244,239,231,.94);border:1px solid var(--line-strong);border-radius:var(--r);padding:26px 28px}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font:600 12px/1 var(--font);letter-spacing:.18em;
+  text-transform:uppercase;color:var(--accent);margin:0 0 18px}
+.eyebrow::before{content:"";width:7px;height:7px;border-radius:var(--r-dot);background:var(--accent)}
+.card h1{font-size:clamp(40px,6.4vw,84px);line-height:.96;letter-spacing:-.03em;margin:0 0 22px;font-weight:700}
+.card h2{font-size:clamp(28px,3.6vw,46px);line-height:1.04;letter-spacing:-.025em;margin:0 0 16px;font-weight:700}
+.card h1 em,.card h2 em{font-style:italic;color:var(--accent);font-weight:700}
+.card p{font-size:clamp(16px,1.15vw,18px);line-height:1.6;color:var(--ink-dim);margin:0 0 12px}
+.lede{font-size:clamp(18px,1.45vw,23px)!important;line-height:1.45!important;color:var(--ink)!important}
+.card strong{color:var(--ink);font-weight:650}
+.note{font-size:13px!important;line-height:1.5;color:var(--ink-mute)!important;margin-top:18px!important;padding-top:12px;border-top:1px solid var(--line)}
+.stats{display:flex;flex-wrap:wrap;margin:20px 0 4px;border-top:1px solid var(--line);padding-top:14px}
+.stat{flex:1 1 0;padding-right:16px}
+.stat+.stat{padding-left:16px;border-left:1px solid var(--line)}
+.stat .v{font:650 clamp(20px,1.8vw,28px)/1 var(--font);letter-spacing:-.02em;color:var(--ink);white-space:nowrap}
+.stat .l{font:600 10.5px/1.35 var(--font);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-mute);margin-top:8px}
+.assumed::after{content:"*";color:var(--accent);margin-left:1px}
+.unbound{background:#ffd9d0;color:#7a1a00}
+.topbar{position:fixed;top:0;left:0;right:0;z-index:8;display:flex;align-items:center;justify-content:space-between;
+  padding:16px var(--pad);pointer-events:none}
+.topbar .wm{font:700 15px/1 var(--font);letter-spacing:.02em;color:var(--ink)}
+.topbar .wm b{color:var(--accent);font-weight:700}
+#rail{position:fixed;right:16px;top:50%;transform:translateY(-50%);z-index:8;display:flex;flex-direction:column;gap:12px}
+#rail button{width:8px;height:8px;border-radius:var(--r-dot);background:var(--line-strong);border:0;padding:0;cursor:pointer;transition:transform .3s,background .3s}
+#rail button.on{background:var(--accent);transform:scale(1.5)}
+#rail button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+#hint{position:fixed;bottom:36px;left:50%;transform:translateX(-50%);z-index:7;color:var(--ink-mute);
+  font:600 11px/1 var(--font);letter-spacing:.18em;text-transform:uppercase;transition:opacity .5s}
+#hint.gone{opacity:0}
+@media (max-width:720px){
+  section.step{align-items:flex-end;padding:0 16px 10vh}
+  .card{max-width:none;width:100%;background:rgba(244,239,231,.95);border:1px solid var(--line-strong);padding:20px}
+  #scrim{display:none}
+  .mood-grid{left:16px;right:16px;top:9vh;bottom:auto;height:46vh;grid-template-columns:repeat(2,1fr)}
+  #rail{display:none}
+}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{transition-duration:0s!important;transition-delay:0s!important;animation:none!important}
+  .card,.tile{transform:none!important}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#scroller">Skip to the story</a>
+
+<!-- fixed stage: one layer per visual type; the engine switches which is .on -->
+<div id="stage">
+  <div class="layer" id="layer-hero"></div>
+  <div class="layer" id="layer-plan">
+    <div class="plan-frame" id="plan-frame">
+      <div class="plan-canvas" id="plan-canvas">
+        <img id="plan-img" alt="Floor plan" decoding="async">
+        <svg id="plan-svg" viewBox="0 0 1 1" preserveAspectRatio="none" aria-hidden="true"></svg>
+        <div id="plan-labels"></div>
+      </div>
+    </div>
+  </div>
+  <div class="layer" id="layer-mood"><div class="mood-grid" id="mood-grid"></div></div>
+</div>
+<div id="scrim"></div>
+
+<header class="topbar"><span class="wm">Gym <b>Mood Board</b></span></header>
+<nav id="rail" aria-label="Story progress"></nav>
+<div id="hint">Scroll</div>
+
+<!-- beats: each data-step needs a PHASES entry below (verify.py checks) -->
+<main id="scroller">
+  <section class="step" data-step="vision" data-label="Vision">
+    <div class="card">
+      <p class="eyebrow">Vision</p>
+      <h1>The gym they <em>imagine</em></h1>
+      <p class="lede">Placeholder copy. The Technogym renders that set the expectation.</p>
+    </div>
+  </section>
+
+  <section class="step" data-step="plan" data-label="Floor plan">
+    <div class="card panel">
+      <p class="eyebrow">Floor plan</p>
+      <h2>Where it <em>lands</em></h2>
+      <p>Placeholder copy. Level 2 carries the training floor.</p>
+      <div class="stats">
+        <div class="stat"><div class="v" data-bind="level_02_stations">?</div><div class="l">Stations on level 2</div></div>
+      </div>
+      <p class="note">* marks an assumption still to be confirmed.</p>
+    </div>
+  </section>
+
+  <section class="step" data-step="mood" data-label="Mood">
+    <div class="card">
+      <p class="eyebrow">Mood</p>
+      <h2>How it should <em>feel</em></h2>
+      <p>Placeholder copy. Oak, plaster and travertine, lit warm and low.</p>
+    </div>
+  </section>
+</main>
+
+<script>
+(function(){
+  "use strict";
+  var D = window.__DATA__ || {images:{}, areas:{}, facts:{}};
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function $(id){ return document.getElementById(id); }
+  function el(tag, cls){ var e = document.createElement(tag); if(cls) e.className = cls; return e; }
+  function meta(id){ return D.images[id] || null; }
+  function picture(id){
+    var m = meta(id); if(!m) return null;
+    var i = el("img"); i.src = m.src; i.alt = m.alt; i.decoding = "async";
+    if(m.web_w){ i.width = m.web_w; i.height = m.web_h; }
+    return i;
+  }
+
+  /* ---- PHASES: the ONE place each beat's visual is declared ----------------
+     layer "hero": images[]  full-bleed crossfade
+     layer "plan": level, area (id in story/areas.json, or null for the whole plan)
+     layer "mood": images[]  grid with caption + palette swatches                 */
+  var PHASES = {
+    vision: { layer:"hero", images:["vision-01-cardio-gallery-oak-ceiling", "vision-02-strength-circuit-green-wall", "vision-03-open-studio-kettlebell-bench"] },
+    plan: { layer:"plan", level:"plan-level-02", area:null },
+    mood: { layer:"mood", images:["mood-08-kettlebell-wall-oak", "mood-21-oak-lockers-vanity-lounge", "mood-35-plaster-lounge-tiled-column", "mood-42-beige-material-board", "mood-44-travertine-oak-joint", "mood-01-cardio-track-timber-ceiling"] }
+  };
+
+  var state = { id:null, spec:null, heroTimer:0 };
+
+  function showLayer(name){
+    ["hero", "plan", "mood"].forEach(function(n){ $("layer-" + n).classList.toggle("on", n === name); });
+    document.body.setAttribute("data-layer", name || "");
+  }
+
+  /* hero: crossfade through images; still under reduced motion or a hidden tab */
+  function enterHero(spec){
+    var box = $("layer-hero"), key = spec.images.join();
+    if(box.getAttribute("data-set") !== key){
+      box.textContent = "";
+      spec.images.forEach(function(id, k){ var p = picture(id); if(p){ if(k === 0) p.classList.add("on"); box.appendChild(p); } });
+      box.setAttribute("data-set", key);
+    }
+    var frames = box.querySelectorAll("img");
+    if(reduce || frames.length < 2) return;
+    var k = Math.max(0, [].indexOf.call(frames, box.querySelector("img.on")));
+    state.heroTimer = setInterval(function(){
+      if(document.hidden) return;
+      frames[k].classList.remove("on"); k = (k + 1) % frames.length; frames[k].classList.add("on");
+    }, 5000);
+  }
+
+  /* plan: size the canvas into the free area, then zoom to an area with one transform */
+  function drawAreas(level){
+    var svg = $("plan-svg"), labels = $("plan-labels");
+    svg.textContent = ""; labels.textContent = "";
+    (D.areas[level] || []).forEach(function(a){
+      var r = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+      r.setAttribute("x", a.box[0]); r.setAttribute("y", a.box[1]);
+      r.setAttribute("width", a.box[2]); r.setAttribute("height", a.box[3]);
+      r.setAttribute("class", "area"); r.setAttribute("data-area", a.id);
+      svg.appendChild(r);
+      var l = el("div", "area-label"); l.textContent = a.name; l.setAttribute("data-area", a.id);
+      l.style.left = (a.box[0] * 100) + "%"; l.style.top = (a.box[1] * 100) + "%";
+      labels.appendChild(l);
+    });
+  }
+  function fitPlan(spec){
+    var m = meta(spec.level); if(!m) return;
+    var fr = $("plan-frame"), cv = $("plan-canvas"), vw = window.innerWidth, vh = window.innerHeight, narrow = vw <= 720;
+    var fx = narrow ? 16 : vw * 0.38, fw = narrow ? vw - 32 : vw * 0.58;
+    var fy = narrow ? vh * 0.09 : vh * 0.11, fh = narrow ? vh * 0.46 : vh * 0.8;
+    var ar = m.web_w / m.web_h, w = Math.min(fw, fh * ar), h = w / ar;
+    fr.style.width = cv.style.width = w + "px"; fr.style.height = cv.style.height = h + "px";
+    fr.style.left = (fx + (fw - w) / 2) + "px"; fr.style.top = (fy + (fh - h) / 2) + "px";
+    var a = spec.area ? (D.areas[spec.level] || []).filter(function(x){ return x.id === spec.area; })[0] : null;
+    var s = 1, tx = 0, ty = 0;
+    if(a){
+      s = Math.min(4, 0.85 * Math.min(1 / a.box[2], 1 / a.box[3]));
+      tx = w / 2 - (a.box[0] + a.box[2] / 2) * w * s;
+      ty = h / 2 - (a.box[1] + a.box[3] / 2) * h * s;
+    }
+    cv.style.transform = "translate(" + tx + "px," + ty + "px) scale(" + s + ")";
+    cv.style.setProperty("--inv", String(1 / s));
+    cv.classList.toggle("has-focus", !!a);
+    [].forEach.call(cv.querySelectorAll("[data-area]"), function(n){
+      n.classList.toggle("focus", !!a && n.getAttribute("data-area") === a.id);
+    });
+  }
+  function enterPlan(spec){
+    var m = meta(spec.level), im = $("plan-img"); if(!m) return;
+    if(im.getAttribute("data-id") !== spec.level){
+      im.src = m.src; im.alt = m.alt; im.setAttribute("data-id", spec.level);
+      drawAreas(spec.level);
+    }
+    fitPlan(spec);
+  }
+
+  /* mood: build the grid once per image set, reveal with a stagger */
+  function enterMood(spec){
+    var g = $("mood-grid"), key = spec.images.join();
+    if(g.getAttribute("data-set") !== key){
+      g.textContent = "";
+      spec.images.forEach(function(id, k){
+        var m = meta(id), p = picture(id); if(!p) return;
+        var f = el("figure", "tile"); f.style.setProperty("--i", String(k)); f.appendChild(p);
+        var c = el("figcaption"); c.textContent = m.title;
+        var sw = el("span", "swatches"); sw.setAttribute("aria-hidden", "true");
+        (m.palette || []).slice(0, 4).forEach(function(hex){ var s = el("span"); s.style.background = hex; sw.appendChild(s); });
+        c.appendChild(sw); f.appendChild(c); g.appendChild(f);
+      });
+      g.setAttribute("data-set", key);
+    }
+    requestAnimationFrame(function(){ g.classList.add("in"); });
+  }
+
+  function enter(id){
+    var spec = PHASES[id]; if(!spec || state.id === id) return;
+    state.id = id; state.spec = spec;
+    clearInterval(state.heroTimer);
+    showLayer(spec.layer);
+    if(spec.layer !== "mood") $("mood-grid").classList.remove("in");
+    if(spec.layer === "hero") enterHero(spec);
+    if(spec.layer === "plan") enterPlan(spec);
+    if(spec.layer === "mood") enterMood(spec);
+  }
+
+  /* facts: every on-screen number comes from D.facts, never typed into the markup */
+  function hydrate(){
+    [].forEach.call(document.querySelectorAll("[data-bind]"), function(n){
+      var f = D.facts[n.getAttribute("data-bind")];
+      if(!f){ n.textContent = "?"; n.classList.add("unbound"); return; }
+      n.textContent = f.display != null ? f.display : String(f.value);
+      if(f.assumed){ n.classList.add("assumed"); n.title = "Assumption: " + (f.source || "to be confirmed"); }
+    });
+  }
+
+  /* ---- scroll controller: observers, no per-frame layout reads ------------ */
+  var sections = [].slice.call(document.querySelectorAll("section.step[data-step]"));
+  var rail = $("rail"), hint = $("hint"), current = -1, commitT = 0;
+  var idx = new Map(); sections.forEach(function(s, i){ idx.set(s, i); });
+
+  sections.forEach(function(s){
+    var b = el("button"); b.type = "button";
+    b.setAttribute("aria-label", "Go to " + (s.getAttribute("data-label") || s.getAttribute("data-step")));
+    b.addEventListener("click", function(){ s.scrollIntoView({behavior: reduce ? "auto" : "smooth"}); });
+    rail.appendChild(b);
+  });
+
+  function activate(i){
+    if(i === current) return; current = i;
+    [].forEach.call(rail.children, function(b, k){
+      b.classList.toggle("on", k === i);
+      if(k === i) b.setAttribute("aria-current", "step"); else b.removeAttribute("aria-current");
+    });
+    clearTimeout(commitT);      // only the beat the reader settles on commits its scene
+    commitT = setTimeout(function(){ enter(sections[i].getAttribute("data-step")); }, 140);
+  }
+
+  if("IntersectionObserver" in window){
+    var centerIO = new IntersectionObserver(function(ents){
+      var pick = null;           // a fling delivers several entries, not in time order
+      ents.forEach(function(e){ if(e.isIntersecting && (!pick || e.time > pick.time)) pick = e; });
+      if(pick) activate(idx.get(pick.target));
+    }, {rootMargin:"-50% 0px -50% 0px", threshold:0});
+    var cardIO = new IntersectionObserver(function(ents){
+      ents.forEach(function(e){ var c = e.target.querySelector(".card"); if(c) c.classList.toggle("in", e.isIntersecting); });
+    }, {rootMargin:"-20% 0px -20% 0px", threshold:0});
+    sections.forEach(function(s){ centerIO.observe(s); cardIO.observe(s); });
+  } else {
+    [].forEach.call(document.querySelectorAll(".card"), function(c){ c.classList.add("in"); });
+  }
+
+  window.addEventListener("resize", function(){ if(state.spec && state.spec.layer === "plan") fitPlan(state.spec); });
+  window.addEventListener("scroll", function(){ hint.classList.toggle("gone", window.scrollY > 40); }, {passive:true});
+
+  hydrate();
+  if(sections.length) enter(sections[0].getAttribute("data-step"));
+  window.__APP = {state:state, PHASES:PHASES, enter:enter, data:D};
+})();
+</script>
+</body>
+</html>
