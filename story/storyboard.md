@@ -15,7 +15,7 @@ plaster, light and textile around it.
 | 03 | vision-look | 01 Vision | What we need to look at | Read it by *material* | figure: vision-01, boxes 1 Oak, 2 Glass, 3 Metal, 4 Steel and textile |
 | 04 | vision-assess | 01 Vision | What needs to be assessed | Three points to *assess* before we build the mood | grid: vision-02 (big), 03, 01 tagged 1-3 |
 | 05 | plan-overview | 02 Floor plan | Top down | One building, one *body* | figure: 6 plans in 2 columns, no boxes |
-| 06 | mood-natural | 03 Mood | Why natural materials | Why the mood is built from *natural* materials | grid: mood-22, 08, 01 tagged 1-3, mood-40 |
+| 06 | mood-natural | 03 Mood | Why natural materials | Why the mood is built from *natural* materials | grid: mood-08 (big, 2 Density), 22 (1 Daylight), 01 (3 Continuity) |
 | 07 | mood-spine | 03 Mood | Our proposal | A timber spine through *every* floor | grid: mood-44 (big), 35, 04, 09, 20 |
 | 08 | mood-wood | 03 Mood | Material: wood | Wood carries the *spine* | grid: mood-05, 23, 18, 14, 12, 49 (cork veneer) |
 | 09 | mood-earth | 03 Mood | Material: stone and earth | Stone and earth *ground* it | grid: mood-38, 39, 40, 36, 31, 32 |
