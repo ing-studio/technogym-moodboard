@@ -23,4 +23,7 @@ Stage 0 of the scrollyteller workflow. A person confirms this page before any st
 - Zones (Recover, Train, Studio, Change), stairs and glazed facades are our reading of the drawings
   (`story/annotations.json`). Confirm in particular: the roof deck and open area on level 5, the private
   cabins on level -2, the boxing ring on level -1.
-- Mood proposal: "timber spine", one oak core through every floor plus one companion material per floor.
+- Mood proposal: "timber spine", one oak core through every floor plus one natural material per floor's job.
+  Proposed materials: wood (oak, walnut, figured veneer), stone (travertine, rough stone), earth (rammed earth,
+  terracotta, glazed clay tile), lime plaster, textile and leather (linen, bouclé, leather), metal details
+  (bronze, brass, copper). Terracotta red is the one accent colour.

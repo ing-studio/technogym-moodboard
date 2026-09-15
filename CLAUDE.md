@@ -11,9 +11,10 @@ Three chapters, in this order:
 0. **Intro**: plain ground, the claim and the chapters.
 1. **Vision**: the proposed Technogym styling in 3 beats: what is proposed, what we need to look at, what needs
    to be assessed (`assets/source/01-vision`).
-2. **Floor plan**: 4 beats read top down: all floors, zones, route, light and the four requirements
+2. **Floor plan**: 2 beats: all floors top down with zones, then light and the four requirements
    (`assets/source/02-floor-plan`, `story/annotations.json`).
-3. **Mood**: 4 beats: why wood, the timber spine proposal, functional and beautiful, the palette
+3. **Mood**: why natural materials, the timber spine proposal, one beat per material (wood; stone and earth;
+   lime plaster and warm light; textile, leather and bronze), and the list of proposed materials
    (`assets/source/03-mood`).
 
 Project specifics (client, claim, areas, numbers) are still to come: see TODOs in `story/brief.md`.

@@ -10,14 +10,12 @@ that up; the plan and mood chapters answer it. Specifics come from `story/brief.
 | 1 | 01 Vision | what is proposed | `grid`: all Technogym renders, tagged Room / Cardio / Storage | what the styling is for (generic, made to present equipment), what we have, what it offers |
 | 2 | 01 Vision | what we need to look at | `figure`: a render (group `layers`), no plan yet | eye-level layers 1-4 (shell, light, equipment, objects); bridge to the top view |
 | 3 | 01 Vision | what needs to be assessed | `figure`: the same plan (group `issues`) + strip of renders | introduces zones, route and depth with the plan; the points only the plan reveals (daylight, density, continuity, coverage); the mood must answer all together |
-| 4 | 02 Floor plan | top down | `figure`: all floors in 2 columns (above ground, below ground) | lay out every floor before choosing any finish |
-| 5 | 02 Floor plan | zones | same frames, group `zones` (R Recover, T Train, S Studio, C Change) | what each floor is for |
-| 6 | 02 Floor plan | route | same frames, group `route` | stairs join the floors; the mood must not break along the route |
-| 7 | 02 Floor plan | light and requirements | `figure`: a glazed floor beside a windowless one, group `light` | the four requirements the plan sets for the mood |
-| 8 | 03 Mood | why wood | `grid`: 4 images tagged 1-4 | each requirement answered by natural materials; wood is needed, not decoration |
-| 9 | 03 Mood | proposal | `grid`: a core tile plus one tile per floor type | the timber spine: one oak core, one companion material per floor |
-| 10 | 03 Mood | functional and beautiful | `grid`: 4 tagged details | every timber element does a job |
-| 11 | 03 Mood | landing | `grid`: palette materials with swatches | restate the opening claim, now earned |
+| 4 | 02 Floor plan | top down | `figure`: all floors in 2 columns (above, below ground), group `zones` | every floor has a job and the stairs join them; one idea, minimal copy |
+| 5 | 02 Floor plan | light and requirements | `figure`: a glazed floor beside a windowless one, group `light` | the four requirements the plan sets for the mood |
+| 6 | 03 Mood | why natural materials | `grid`: 4 images tagged 1-4 | each requirement answered by natural materials; they are needed, not decoration |
+| 7 | 03 Mood | proposal | `grid`: a core tile plus one tile per floor type | the timber spine: one oak core, one natural material per floor's job |
+| 8-11 | 03 Mood | one beat per material | `grid`: 6 images from 03-mood, 3 columns | Works / Looks / Where for wood; stone and earth; plaster and light; textile, leather and bronze |
+| 12 | 03 Mood | landing | `grid`: material close-ups with swatches | the list of proposed natural materials; restate the opening claim |
 
 ## Rules for this arc
 
