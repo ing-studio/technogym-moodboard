@@ -29,9 +29,7 @@
     "plan-level-b1": [
       {"id": "daylight", "group": "issues", "n": "1", "name": "Daylight", "box": [0.03, 0.31, 0.38, 0.59]},
       {"id": "density", "group": "issues", "n": "2", "name": "Density", "box": [0.19, 0.02, 0.27, 0.17]},
-      {"id": "continuity", "group": "issues", "n": "3", "name": "Continuity", "box": [0.41, 0.3, 0.12, 0.2]},
-      {"id": "coverage", "group": "issues", "n": "4", "name": "Coverage", "box": [0.52, 0.09, 0.14, 0.06]},
-      {"id": "b1-cycling", "group": "zones", "n": "S", "name": "Studio", "box": [0.19, 0.02, 0.27, 0.17]},
+      {"id": "continuity", "group": "issues", "n": "3", "name": "Continuity", "box": [0.41, 0.3, 0.12, 0.2]},      {"id": "b1-cycling", "group": "zones", "n": "S", "name": "Studio", "box": [0.19, 0.02, 0.27, 0.17]},
       {"id": "b1-boxing", "group": "zones", "n": "S", "name": "Studio", "box": [0.535, 0.3, 0.25, 0.28]},
       {"id": "b1-train", "group": "zones", "n": "T", "name": "Train", "box": [0.47, 0.02, 0.5, 0.27]}
     ],

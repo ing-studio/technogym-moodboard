@@ -9,7 +9,7 @@ that up; the plan and mood chapters answer it. Specifics come from `story/brief.
 | 0 | Introduction | intro | `none`: plain ground | the claim and the three chapters; bridge to the proposal |
 | 1 | 01 Vision | what is proposed | `grid`: all Technogym renders, tagged Room / Cardio / Storage | what the styling is for (generic, made to present equipment), what we have, what it offers |
 | 2 | 01 Vision | what we need to look at | `figure`: a render (group `layers`), no plan yet | eye-level layers 1-4 (shell, light, equipment, objects); bridge to the top view |
-| 3 | 01 Vision | what needs to be assessed | `figure`: the same plan (group `issues`) + strip of renders | introduces zones, route and depth with the plan; the points only the plan reveals (daylight, density, continuity, coverage); the mood must answer all together |
+| 3 | 01 Vision | what needs to be assessed | `figure`: the same plan (group `issues`) + strip of renders | introduces zones, route and depth with the plan; the points only the plan reveals (daylight, density, continuity); the mood must answer all together |
 | 4 | 02 Floor plan | top down | `figure`: all floors in 2 columns (above, below ground), group `zones` | every floor has a job and the stairs join them; one idea, minimal copy |
 | 5 | 02 Floor plan | light and requirements | `figure`: a glazed floor beside a windowless one, group `light` | the four requirements the plan sets for the mood |
 | 6 | 03 Mood | why natural materials | `grid`: 4 images tagged 1-4 | each requirement answered by natural materials; they are needed, not decoration |

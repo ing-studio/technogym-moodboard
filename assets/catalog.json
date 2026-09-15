@@ -2003,6 +2003,34 @@
       "web_w": 650,
       "web_h": 927,
       "web_bytes": 16174
+    },
+    {
+      "id": "mood-55-led-screen-walls-360-degree",
+      "title": "LED screen room",
+      "alt": "Figure standing in a room of floor-to-ceiling screen walls showing flying birds, reflected in a glossy floor",
+      "tags": [
+        "details",
+        "lighting",
+        "immersive"
+      ],
+      "file": "assets/source/03-mood/mood-55-led-screen-walls-360-degree.jpg",
+      "chapter": "03-mood",
+      "w": 736,
+      "h": 971,
+      "bytes": 62825,
+      "orientation": "portrait",
+      "palette": [
+        "#8a836b",
+        "#ada68c",
+        "#484439",
+        "#cbc2a9",
+        "#e7dac3"
+      ],
+      "sha256": "9c3c08fb36cd99addd25257e0cacabe79be417568afdd00ef42cf0485ded8929",
+      "web": "assets/web/03-mood/mood-55-led-screen-walls-360-degree.webp",
+      "web_w": 736,
+      "web_h": 971,
+      "web_bytes": 35366
     }
   ]
 }
