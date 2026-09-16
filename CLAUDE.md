@@ -31,6 +31,8 @@ assets/web/                        generated WebP (gitignored)
 assets/catalog.json                titles, alt text, tags, palettes per image
 story/                             brief.md, storyboard.md, annotations.json, facts.json
 deck/index.html                    the deck; deck/build/ holds screenshots (gitignored)
+fitness-moodboard.html             the deck bundled as one portable file (gitignored, rebuilt)
+archive/                           superseded HTML files, kept on disk only
 ```
 
 ## Commands (from the project root)
@@ -43,6 +45,7 @@ python .claude/skills/scrollytelling/scripts/verify.py deck/index.html [--unused
 python .claude/skills/scrollytelling/scripts/sync_kit.py deck/index.html   # refresh the skill kit copies
 node .claude/skills/scrollytelling/scripts/shotbeat.mjs deck/index.html --beat plan --out deck/build/plan.png --launch
 node .claude/skills/scrollytelling/scripts/shotbeat.mjs deck/index.html --all --out deck/build --launch
+python .claude/skills/scrollytelling/scripts/build_standalone.py   # -> fitness-moodboard.html, one file
 ```
 Use `python`, not `python3` (Store stub on this machine). Node 24 is installed.
 
@@ -56,6 +59,7 @@ Use `python`, not `python3` (Store stub on this machine). Node 24 is installed.
 - Run `verify.py` after every deck edit and `sync_kit.py` after any CSS or structural one; photograph
   beats with `shotbeat.mjs --all` before handover.
 - `story/storyboard.md` is the agreed running order: keep its rows in step with the deck (verify.py checks).
+- What goes to the client is `fitness-moodboard.html`, rebuilt from the deck, never edited by hand.
 - Brand files live in `assets/brand/`; images carrying a third-party logo, watermark or a recognisable
   person stay out of the deck until the rights are cleared.
 - Never edit `assets/source/` or the `__DATA__` blob by hand.

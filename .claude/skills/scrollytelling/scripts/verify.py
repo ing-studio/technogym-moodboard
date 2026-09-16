@@ -17,6 +17,8 @@ Hard failures (exit 1):
   offline    no fetch( or XMLHttpRequest: the deck must work by double-click (file://)
   board      story/storyboard.md lists the same step ids in the same order as the deck. The
              storyboard is the agreed running order, so drift between the two is a failure
+A bundle built by scripts/build_standalone.py (images inlined as data: URIs) is checked too, minus the
+board and kit checks: it is a build output, so a fault there belongs to the deck it came from.
 Warnings: PHASES entries with no section, assumed facts with no source, a grid whose tile count
 leaves an orphan in the last row, an image shown in more than one beat, a skill kit that no longer
 matches the deck (scripts/sync_kit.py). --unused lists catalogued images no beat shows, which is
@@ -117,8 +119,9 @@ def main():
     if not images:
         fails.append("data: no images inlined; run moodboard-assets/scripts/build_data.py")
     for iid, m in images.items():
-        if not os.path.isfile(os.path.join(base, m.get("src", ""))):
-            fails.append("data: %s src missing on disk: %s" % (iid, m.get("src")))
+        src = str(m.get("src", ""))
+        if not src.startswith(("data:", "http")) and not os.path.isfile(os.path.join(base, src)):
+            fails.append("data: %s src missing on disk: %s" % (iid, src))
         if not str(m.get("alt", "")).strip():
             fails.append("data: %s has no alt text" % iid)
         for k in ("title", "alt"):
@@ -171,8 +174,9 @@ def main():
             fails.append("refs: focus %r is not a box id in story/annotations.json" % fid)
 
     # storyboard parity: the running order is agreed on paper, so the deck must match it
+    bundle = any(str(m.get("src", "")).startswith("data:") for m in images.values())
     board = os.path.join(os.path.dirname(base), "story", "storyboard.md")
-    if os.path.isfile(board):
+    if os.path.isfile(board) and not bundle:
         rows = BOARD_ROW.findall(open(board, encoding="utf-8").read())
         if rows:
             fails += ["board: beat %r is in the deck but not in story/storyboard.md" % s
@@ -202,9 +206,9 @@ def main():
     if repeats:   # deliberate in the vision chapter, usually an oversight in the mood chapter
         warns.append("shown in more than one beat: " + "; ".join(repeats))
 
-    # kit freshness: references/ must still match the deck
+    # kit freshness: references/ must still match the deck (a bundle is a build output, not the deck)
     sync = os.path.join(os.path.dirname(os.path.abspath(__file__)), "sync_kit.py")
-    if os.path.isfile(sync):
+    if os.path.isfile(sync) and not bundle:
         r = subprocess.run([sys.executable, sync, a.deck, "--check"], capture_output=True, text=True)
         if r.returncode:
             warns.append(r.stdout.strip().replace("FAIL: ", "") or "skill kit is stale; run sync_kit.py")
