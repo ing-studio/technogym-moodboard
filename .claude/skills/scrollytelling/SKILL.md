@@ -20,9 +20,10 @@ on the left; a fixed stage on the right shows the visual for the beat the reader
   catalogued images no beat shows, which is the shortlist when a beat needs more pictures.
 - `scripts/sync_kit.py deck/index.html [--check]`: rewrite the two reference copies from the deck. **Run
   after every structural or CSS edit**; `verify.py` warns when they are stale.
-- `scripts/build_standalone.py [deck/index.html] [-o fitness-moodboard.html]`: bundle the deck into one
+- `scripts/build_standalone.py [deck/index.html] [-o index.html]`: bundle the deck into one
   portable HTML file, every picture inlined as a data: URI and unused catalogue entries dropped. That file
-  is what travels to a client; rebuild it, never edit it. `verify.py` checks a bundle too.
+  is what travels to a client and what GitHub Pages serves from the repository root; rebuild it, never
+  edit it. `verify.py` checks a bundle too.
 - `scripts/shotbeat.mjs deck/index.html --beat <step> --out deck/build/<step>.png --launch`: photograph one
   beat in headed Chrome. `--all --out deck/build` shoots every beat at 1600x1000 and 390x844 in one
   browser: that is the handover pass.

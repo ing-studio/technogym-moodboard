@@ -2,10 +2,6 @@
 assets/web/
 deck/build/
 _review/
-# bundle: rebuilt by scrollytelling/scripts/build_standalone.py
-fitness-moodboard.html
-# superseded HTML, kept on disk only
-archive/
 
 # junk
 __pycache__/

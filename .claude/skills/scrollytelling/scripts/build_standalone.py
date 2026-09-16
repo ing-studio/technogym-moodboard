@@ -1,10 +1,11 @@
 #!/usr/bin/env python
 """Bundle the deck into one portable HTML file: every picture inlined, nothing to ship beside it.
 
-  python build_standalone.py [deck/index.html] [-o fitness-moodboard.html]
+  python build_standalone.py [deck/index.html] [-o index.html]
 
 The deck in deck/ points at ../assets/web/*.webp, so it only runs inside the project. This writes a copy
-whose images are data: URIs, for sending to a client or opening from a memory stick. It is a build output,
+whose images are data: URIs: for sending to a client, opening from a memory stick, or serving from GitHub
+Pages, which is why it lands at the repository root as index.html. It is a build output,
 never edited by hand: change deck/index.html and run this again.
 
 Images the deck never shows are dropped from the blob (verify.py --unused lists them), so the file carries
@@ -37,7 +38,7 @@ def data_uri(path):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("deck", nargs="?", default="deck/index.html")
-    ap.add_argument("-o", "--out", default="fitness-moodboard.html")
+    ap.add_argument("-o", "--out", default="index.html")
     a = ap.parse_args()
 
     html = open(a.deck, encoding="utf-8").read()
