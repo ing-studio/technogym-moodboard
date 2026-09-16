@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """Static verification for the gym scroll deck. No browser; seconds. Run after every edit.
 
-  python verify.py deck/index.html [--ban "str1,str2"]
+  python verify.py deck/index.html [--ban "str1,str2"] [--unused]
 
 Hard failures (exit 1):
   syntax     every inline JS <script> passes `node --check`
@@ -15,7 +15,12 @@ Hard failures (exit 1):
   imgs       every static <img> has non-empty alt and (if it has a src) an existing file
   binds      every data-bind id exists in __DATA__.facts
   offline    no fetch( or XMLHttpRequest: the deck must work by double-click (file://)
-Warnings: PHASES entries with no section, assumed facts with no source.
+  board      story/storyboard.md lists the same step ids in the same order as the deck. The
+             storyboard is the agreed running order, so drift between the two is a failure
+Warnings: PHASES entries with no section, assumed facts with no source, a grid whose tile count
+leaves an orphan in the last row, an image shown in more than one beat, a skill kit that no longer
+matches the deck (scripts/sync_kit.py). --unused lists catalogued images no beat shows, which is
+the list to choose from when a beat needs more pictures.
 
 This is the static half. scripts/shotbeat.mjs photographs a beat in a real browser; a person judges the rest.
 """
@@ -39,6 +44,9 @@ PHASES_BLOCK = re.compile(r"var\s+PHASES\s*=\s*\{(.*?)\n\s*\};", re.S)
 LAYERS = ("none", "figure", "grid")
 STEP_TAG = re.compile(r"<section\b[^>]*?data-step\s*=[^>]*>", re.I)
 PHASE_KEY = re.compile(r"(?m)^\s*[\"']?([A-Za-z0-9_-]+)[\"']?\s*:\s*\{")
+BOARD_ROW = re.compile(r"(?m)^\|\s*\d+\s*\|\s*([A-Za-z0-9_-]+)\s*\|")
+SPEC_IMAGE = re.compile(r"\bimage\s*:\s*[\"']([^\"']+)[\"']")
+TILE = re.compile(r"\{[^{}]*\b(?:image|text)\s*:")
 
 
 def attr(tag, name):
@@ -71,6 +79,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("deck")
     ap.add_argument("--ban", default="")
+    ap.add_argument("--unused", action="store_true", help="list catalogued images no beat shows")
     a = ap.parse_args()
 
     html = open(a.deck, encoding="utf-8").read()
@@ -161,6 +170,45 @@ def main():
         if fid not in ids:
             fails.append("refs: focus %r is not a box id in story/annotations.json" % fid)
 
+    # storyboard parity: the running order is agreed on paper, so the deck must match it
+    board = os.path.join(os.path.dirname(base), "story", "storyboard.md")
+    if os.path.isfile(board):
+        rows = BOARD_ROW.findall(open(board, encoding="utf-8").read())
+        if rows:
+            fails += ["board: beat %r is in the deck but not in story/storyboard.md" % s
+                      for s in steps if s not in rows]
+            fails += ["board: story/storyboard.md lists %r, which is not a beat in the deck" % s
+                      for s in rows if s not in steps]
+            shared = [s for s in steps if s in rows]
+            if [s for s in rows if s in steps] != shared:
+                fails.append("board: storyboard order (%s) does not match the deck (%s)"
+                             % (" ".join(s for s in rows if s in steps), " ".join(shared)))
+
+    # per-beat specs: grid shape, and the same picture shown twice
+    starts = [(m.group(1), m.start()) for m in PHASE_KEY.finditer(body)]
+    used = {}
+    for i, (key, pos) in enumerate(starts):
+        spec = body[pos:starts[i + 1][1] if i + 1 < len(starts) else len(body)]
+        for iid in SPEC_IMAGE.findall(spec):
+            used.setdefault(iid, []).append(key)
+        if re.search(r"layer\s*:\s*[\"']grid[\"']", spec):
+            cm = re.search(r"\bcols\s*:\s*(\d+)", spec)
+            cols = int(cm.group(1)) if cm else 3
+            n = len(TILE.findall(spec))
+            wide = re.search(r"size\s*:\s*[\"'](?:big|wide)[\"']", spec)
+            if cols > 1 and not wide and n > cols and n % cols == 1:
+                warns.append("grid %r: %d tiles in %d columns leaves an orphan in the last row" % (key, n, cols))
+    repeats = ["%s (%s)" % (i, ", ".join(w)) for i, w in sorted(used.items()) if len(w) > 1]
+    if repeats:   # deliberate in the vision chapter, usually an oversight in the mood chapter
+        warns.append("shown in more than one beat: " + "; ".join(repeats))
+
+    # kit freshness: references/ must still match the deck
+    sync = os.path.join(os.path.dirname(os.path.abspath(__file__)), "sync_kit.py")
+    if os.path.isfile(sync):
+        r = subprocess.run([sys.executable, sync, a.deck, "--check"], capture_output=True, text=True)
+        if r.returncode:
+            warns.append(r.stdout.strip().replace("FAIL: ", "") or "skill kit is stale; run sync_kit.py")
+
     # image refs in the engine
     for iid in sorted(set(IMAGE_ID.findall(engine))):
         if images and iid not in images:
@@ -186,6 +234,10 @@ def main():
             fails.append("offline: %s used; inline data with build_data.py instead" % pat)
 
     print("deck: %s  (%d sections, %d PHASES, %d images, %d facts)" % (a.deck, len(steps), len(keys), len(images), len(facts)))
+    if a.unused:
+        shown = set(IMAGE_ID.findall(engine))
+        idle = [i for i in sorted(images) if i not in shown]
+        print("  unused (%d of %d catalogued): %s" % (len(idle), len(images), ", ".join(idle) or "none"))
     for w in warns:
         print("  warn: " + w)
     for f in fails:

@@ -38,8 +38,17 @@ and add its rows. No HTML edits before approval.
 together. Only design-system tokens and components. Numbers only through `data-bind`. Then
 `build_data.py`.
 
-**4. Verify.** `verify.py deck/index.html` must PASS after every edit. Before handover:
-`shotbeat.mjs` for every beat at 1600x1000 and 390x844, and look at each PNG.
+**4. Verify.** `verify.py deck/index.html` must PASS after every edit, and `sync_kit.py` re-syncs the skill
+kit after any CSS or structural change. Before handover: `shotbeat.mjs --all --out deck/build --launch`
+(every beat at 1600x1000 and 390x844 in one browser), and look at each PNG. A `SCENE MISMATCH` line means
+the shot is not the beat it is named after.
+
+**R. Revision (the usual entry point).** Once the deck exists, most requests are per-beat edits named by
+the on-screen number: "deck 09, swap that image, drop that line". Skip stages 0-2 and run a short loop:
+restate the change per beat, resolve each number to its `data-step` and say the id back, edit the card and
+its `PHASES` entry together, update `story/storyboard.md` in the same pass, then `build_data.py` (only if
+images changed) → `verify.py` → `sync_kit.py` → shoot the changed beats at both sizes and look at them.
+Never batch a decision the person has not made: ask once, at the end, and keep working on what is settled.
 
 **5. Report.** What changed; review-board items still open; what only a person can judge (composition,
 whether a zoom lands right, whether the mood selection feels right, how the copy reads aloud). A PASS
@@ -61,6 +70,12 @@ missing alt) blocks stage 3.
 - Every on-screen number is in `facts.json` with a source; assumptions show `*`.
 - Every image has alt text; no fact lives only in hover or motion.
 - No em dashes in visible copy; no `fetch()`; reduced motion honoured; body text ≥4.5:1.
-- Never edit `assets/source/` files or `__DATA__` by hand.
+- Never edit `assets/source/` files, `__DATA__`, or the two `references/` copies by hand (`sync_kit.py`).
+- Copy handed over by the client keeps its voice; only what the rules forbid changes, and the change is
+  reported (em dashes are the usual one).
+- An image with a third-party logo, a watermark or a recognisable person does not go in the deck until
+  someone clears it. Flag it, do not quietly use it.
+- Patch scripts go to the scratchpad and run by path; a shell heredoc silently mangles regexes. Every new
+  check gets a negative test.
 - Ambiguous visual request: restate it in component terms (none / figure with boxes / grid) and, if it could
   mean two things, show a two-option ASCII sketch before editing.

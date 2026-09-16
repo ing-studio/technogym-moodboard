@@ -29,6 +29,9 @@ generous space. It should read like a well-made architect's presentation, not a 
 - **Renders are read, not admired.** Full image, hairline outline, boxes as translucent accent fills with a
   crisp stroke. Zoom, do not pan around.
 - **Beats are numbered.** Each eyebrow starts with its beat number; the top bar shows `05 / 12`.
+- **The studio mark sits in a corner, small.** One fixed logo, bottom right on desktop and top centre on a
+  phone, never over a picture. It only moves on the closing beat, where it fades out as the centred logo
+  arrives with the studio's website and email.
 - **Plain ground is a visual too.** A statement beat (`none`) uses space and type only.
 - **Ink hierarchy does the work.** `--ink` for headlines, `--ink-dim` for body, `--ink-mute` for notes and
   labels. `--ink-faint` (3.4:1) never carries text a reader must read.

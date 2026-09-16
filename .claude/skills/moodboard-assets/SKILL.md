@@ -21,7 +21,9 @@ assets/rename-log.csv          what moved where, with sha256
 story/annotations.json         boxes drawn on images (plan areas, render layers, issues)
 story/facts.json               every on-screen number with its source
 ```
-Originals in `assets/source/` are never edited, only renamed.
+Originals in `assets/source/` are never edited, only renamed. Brand files (the client logo and anything
+generated from it) live in `assets/brand/`, outside `assets/source/`, so the catalog never demands a title
+and alt text for a logo.
 
 ## Naming
 
@@ -47,7 +49,20 @@ python .claude/skills/moodboard-assets/scripts/build_data.py         # inline in
 python .claude/skills/scrollytelling/scripts/verify.py deck/index.html
 ```
 Drop new images in `assets/inbox/` first. `organize.py` skips entries already moved, so the map is the
-full history. `catalog.py` and `make_web.py` are safe to rerun.
+full history. `catalog.py` and `make_web.py` are safe to rerun, and `catalog.py` ignores non-image files
+(`Thumbs.db`, `.DS_Store`) rather than crashing on them.
+
+### A new image, end to end
+
+1. **Look at it.** Title, alt text and tags are written after viewing the file, never from the file name.
+2. **Screen it.** A third-party logo, a shop sign, a watermark or a recognisable person makes an image
+   unusable in a client deck, or usable only once someone clears the rights. Say which it is; never slip
+   one in quietly. Images already caught this way: `FYSIK`, `brisafe`, a Xiaohongshu watermark, an athlete
+   poster.
+3. **Catalogue it**: `catalog.py --check` fails while the title or alt is empty, which is the gate.
+4. **Size it and inline it**: `make_web.py` then `build_data.py`, then `verify.py`.
+5. A retitled image keeps its id: the id is the file name, so renaming a *title* costs nothing, renaming a
+   *file* goes through `organize.py`.
 
 ## catalog.json entry
 

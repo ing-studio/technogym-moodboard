@@ -39,8 +39,10 @@ deck/index.html                    the deck; deck/build/ holds screenshots (giti
 python .claude/skills/moodboard-assets/scripts/catalog.py --check
 python .claude/skills/moodboard-assets/scripts/make_web.py
 python .claude/skills/moodboard-assets/scripts/build_data.py
-python .claude/skills/scrollytelling/scripts/verify.py deck/index.html
+python .claude/skills/scrollytelling/scripts/verify.py deck/index.html [--unused]
+python .claude/skills/scrollytelling/scripts/sync_kit.py deck/index.html   # refresh the skill kit copies
 node .claude/skills/scrollytelling/scripts/shotbeat.mjs deck/index.html --beat plan --out deck/build/plan.png --launch
+node .claude/skills/scrollytelling/scripts/shotbeat.mjs deck/index.html --all --out deck/build --launch
 ```
 Use `python`, not `python3` (Store stub on this machine). Node 24 is installed.
 
@@ -51,5 +53,9 @@ Use `python`, not `python3` (Store stub on this machine). Node 24 is installed.
 - Every image has alt text; no em dashes in visible copy; no `fetch()` (deck opens by double-click).
 - Light warm ground, one bronze accent, square boxes, one type family (`.claude/skills/scrollytelling/references/design.md`).
 - Floor plans have no background: transparent drawings on the page, outline-only boxes. Beats are numbered by the engine.
-- Run `verify.py` after every deck edit; photograph beats with `shotbeat.mjs` before handover.
+- Run `verify.py` after every deck edit and `sync_kit.py` after any CSS or structural one; photograph
+  beats with `shotbeat.mjs --all` before handover.
+- `story/storyboard.md` is the agreed running order: keep its rows in step with the deck (verify.py checks).
+- Brand files live in `assets/brand/`; images carrying a third-party logo, watermark or a recognisable
+  person stay out of the deck until the rights are cleared.
 - Never edit `assets/source/` or the `__DATA__` blob by hand.

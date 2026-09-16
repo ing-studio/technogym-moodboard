@@ -46,12 +46,34 @@ Check: the first, middle and last beat read alone must carry situation, turn and
 - Carry a phrase or number forward verbatim when a later beat pays it off.
 - The mood beat for an area follows the plan beat for that area, so the reader never has to remember.
 
+## Copy the client writes
+
+Revisions often arrive as finished sentences to drop in. Keep the words and the voice; change only what
+the deck's rules forbid, and say what was changed and why.
+
+- **Em dashes** are banned on screen. Replace with a colon or split the sentence. Never keep one silently.
+- **Do not describe the pictures.** The images speak; the copy says what the material does and means.
+- **Terms carry through**: say "wood", not "oak", once a beat has been generalised; the same word in the
+  card, the storyboard and the brief.
+- **No material is assigned to a level.** The building is one body; levels appear only as plan labels.
+- A request to "make the text longer" means another claim or a concrete material, not padding.
+
 ## Anti-slop
 
 - One claim per sentence; reasons go in a `.note`, not a second clause.
 - Banned in visible copy: em dashes; hedges; "Let's look at", "It's worth noting"; rhetorical questions;
   "elevate", "curated", "seamless", "holistic", "dive into", "unlock", "state-of-the-art", "world-class".
 - Name materials and places concretely: "walnut lockers", not "premium finishes".
+
+## Revising a beat
+
+- A request names a beat by its **on-screen number**, which is its position. Count sections to get the
+  `data-step` id, and name the id back so a mis-count surfaces before the edit.
+- Change `story/storyboard.md` in the same pass: its table row and the key-copy line under it. The board
+  is the agreed running order and `verify.py` fails when it drifts from the deck.
+- Removing an image from a beat is a copy change too: cut the sentence that pointed at it.
+- When a change makes an earlier beat wrong (a word replaced everywhere, a point that no longer lands),
+  say so and offer the follow-up rather than editing beats nobody asked about.
 
 ## Read-through
 
