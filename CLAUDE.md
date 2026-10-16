@@ -33,6 +33,7 @@ assets/web/                        generated WebP (gitignored)
 assets/catalog.json                titles, alt text, tags, palettes per image
 story/                             brief.md, storyboard.md, annotations.json, facts.json
 deck/index.html                    the deck; deck/build/ holds screenshots (gitignored)
+assets/brand/                      studio logo and the self-hosted type (fonts/, Hanken Grotesk, OFL)
 index.html                         the deck bundled as one portable file; what GitHub Pages serves
 archive/                           superseded HTML files, kept for the record
 ```

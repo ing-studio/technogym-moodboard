@@ -9,7 +9,8 @@ Pages, which is why it lands at the repository root as index.html. It is a build
 never edited by hand: change deck/index.html and run this again.
 
 Images the deck never shows are dropped from the blob (verify.py --unused lists them), so the file carries
-what it needs and no more. Everything else, including the engine and the design system, is already inline.
+what it needs and no more. Fonts the stylesheet loads with url(...) are inlined too (assets/brand/fonts/).
+Everything else, including the engine and the design system, is already inline.
 """
 
 import argparse
@@ -22,9 +23,11 @@ import sys
 START, END = "/*__DATA__*/", "/*__END__*/"
 INLINE_SCRIPT = re.compile(r"<script\b([^>]*)>(.*?)</script>", re.I | re.S)
 IMAGE_ID = re.compile(r"[\"']((?:vision|mood)-\d{2}(?:-[a-z0-9]+)+|plan-level-[a-z0-9]+)[\"']")
+STYLE = re.compile(r"(<style\b[^>]*>)(.*?)(</style>)", re.I | re.S)
+CSS_URL = re.compile(r"url\(([\"']?)([^)\"']+)\1\)")
 IMG_SRC = re.compile(r"(<img\b[^>]*?\bsrc\s*=\s*([\"']))(.*?)(\2)", re.I | re.S)
 MIME = {".webp": "image/webp", ".png": "image/png", ".jpg": "image/jpeg", ".jpeg": "image/jpeg",
-        ".svg": "image/svg+xml", ".gif": "image/gif"}
+        ".svg": "image/svg+xml", ".gif": "image/gif", ".woff2": "font/woff2"}
 
 
 def data_uri(path):
@@ -79,11 +82,24 @@ def main():
         return mo.group(1) + data_uri(path) + mo.group(4)
 
     html = IMG_SRC.sub(swap, html)
+
+    # fonts and any other url(...) in the stylesheet
+    def swap_url(mo):
+        src = mo.group(2)
+        if src.startswith(("data:", "http", "#")):
+            return mo.group(0)
+        path = os.path.join(base, src)
+        if not os.path.isfile(path):
+            sys.exit("missing file on disk: %s" % path)
+        files.add(os.path.normpath(path))
+        return 'url("%s")' % data_uri(path)
+
+    html = STYLE.sub(lambda mo: mo.group(1) + CSS_URL.sub(swap_url, mo.group(2)) + mo.group(3), html)
     total += sum(os.path.getsize(p) for p in files)
 
     with open(a.out, "w", encoding="utf-8", newline="") as fh:
         fh.write(html)
-    print("ok: %s  %.1f MB  (%d images inlined from %.1f MB, %d unused dropped)"
+    print("ok: %s  %.1f MB  (%d files inlined from %.1f MB, %d unused dropped)"
           % (a.out, os.path.getsize(a.out) / 1e6, len(kept) + len(files), total / 1e6, len(dropped)))
     return 0
 

@@ -8,12 +8,17 @@
 <script>window.__DATA__ = /*__DATA__*/{"images":{},"annotations":{},"facts":{}}/*__END__*/;</script>
 <style>
 /* Inlined copy of .claude/skills/scrollytelling/references/design_system.css. Keep them in sync. */
+/* one family, self-hosted so every machine renders the same face (Hanken Grotesk, OFL, assets/brand/fonts) */
+@font-face{font-family:"Hanken Grotesk";font-style:normal;font-weight:100 900;font-display:swap;
+  src:url("../assets/brand/fonts/hanken-grotesk-latin-wght-normal.woff2") format("woff2")}
+@font-face{font-family:"Hanken Grotesk";font-style:italic;font-weight:100 900;font-display:swap;
+  src:url("../assets/brand/fonts/hanken-grotesk-latin-wght-italic.woff2") format("woff2")}
 :root{
   --bg:#f4efe7; --surface:#ebe4d8; --surface-2:#e2d9ca;
   --ink:#1f1a14; --ink-dim:#4a4238; --ink-mute:#6b6155; --ink-faint:#8a7f71;
   --line:rgba(31,26,20,.12); --line-soft:rgba(31,26,20,.07); --line-strong:rgba(31,26,20,.24);
   --accent:#8a5a2b; --accent-soft:rgba(138,90,43,.10); --accent-mid:rgba(138,90,43,.22);
-  --font:"Helvetica Neue","Helvetica","Arial",sans-serif;
+  --font:"Hanken Grotesk","Helvetica Neue","Helvetica","Arial",sans-serif;
   --pad:clamp(20px,4vw,60px); --r:0; --r-dot:50%;
   --ease:cubic-bezier(.16,1,.3,1);
 }
@@ -22,6 +27,7 @@ html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:v
   -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 body{overflow-x:hidden}
 img{display:block;max-width:100%}
+::selection{background:var(--accent-mid);color:var(--ink)}
 .skip{position:absolute;left:-9999px;top:8px;z-index:20;background:var(--ink);color:var(--bg);padding:8px 12px}
 .skip:focus{left:8px}
 
@@ -72,7 +78,7 @@ img{display:block;max-width:100%}
 .tile .tag{position:absolute;left:0;top:0;font:600 11px/1 var(--font);letter-spacing:.1em;text-transform:uppercase;
   color:var(--bg);background:var(--accent);padding:6px 8px}
 .tile figcaption{position:absolute;left:0;bottom:0;display:flex;align-items:center;gap:8px;
-  font:600 11px/1 var(--font);letter-spacing:.1em;text-transform:uppercase;color:var(--ink);
+  font:600 11px/1.25 var(--font);letter-spacing:.1em;text-transform:uppercase;color:var(--ink);
   background:rgba(244,239,231,.92);padding:6px 8px}
 .tile.text{display:flex;align-items:flex-end;border:1px dashed var(--line-strong)}
 .tile-text{margin:0;padding:34px 12px 12px;font:500 14px/1.35 var(--font);color:var(--ink-dim)}
@@ -81,8 +87,8 @@ img{display:block;max-width:100%}
 
 /* ---- scroller and cards ------------------------------------------------- */
 #scroller{position:relative;z-index:5;width:100%;pointer-events:none}
-section.step{min-height:100vh;display:flex;align-items:center;padding:13vh var(--pad);pointer-events:none}
-section.step.tall{min-height:140vh}
+section.step{min-height:100vh;min-height:100svh;display:flex;align-items:center;padding:13vh var(--pad);pointer-events:none}
+section.step.tall{min-height:140vh;min-height:140svh}
 section.step.center{justify-content:center}
 .card{max-width:min(29rem,32vw);opacity:0;transform:translateY(24px);pointer-events:auto;
   transition:opacity .7s var(--ease),transform .7s var(--ease)}
@@ -91,12 +97,12 @@ section.step.center{justify-content:center}
 .card.intro{max-width:min(46rem,86vw)}
 .card.panel{background:rgba(244,239,231,.94);border:1px solid var(--line-strong);border-radius:var(--r);padding:26px 28px}
 
-.eyebrow{display:inline-flex;align-items:center;gap:10px;font:600 12px/1 var(--font);letter-spacing:.18em;
+.eyebrow{display:inline-flex;align-items:baseline;gap:10px;font:600 12px/1.35 var(--font);letter-spacing:.18em;
   text-transform:uppercase;color:var(--accent);margin:0 0 18px}
 /* deck numbers: every beat's eyebrow starts with its number (01, 02 …), counted in document order */
 #scroller{counter-reset:beat}
 section.step{counter-increment:beat}
-.eyebrow::before{content:counter(beat, decimal-leading-zero);padding:4px 6px;font:700 11px/1 var(--font);letter-spacing:.06em;
+.eyebrow::before{content:counter(beat, decimal-leading-zero);flex:none;padding:4px 6px;font:700 11px/1 var(--font);letter-spacing:.06em;
   color:var(--bg);background:var(--accent)}
 .card h1{font-size:clamp(40px,6.4vw,84px);line-height:.96;letter-spacing:-.03em;margin:0 0 22px;font-weight:700}
 .card h2{font-size:clamp(28px,3.2vw,44px);line-height:1.04;letter-spacing:-.025em;margin:0 0 16px;font-weight:700}
@@ -182,6 +188,8 @@ body[data-step="contact"] .corner-logo{opacity:0;transform:scale(.6)}
   .swatches{display:none}
   .tile-text{font-size:11px;padding:22px 6px 6px}
   .topbar .chap{margin-right:0}
+  .topbar .chap-name{display:none}   /* the centred logo needs the room: the count alone */
+  .topbar .chap b{margin-left:0}
   .corner-logo{width:34px;height:34px;top:8px;bottom:auto;right:auto;left:50%;transform:translateX(-50%)}
   body[data-step="contact"] .corner-logo{transform:translateX(-50%) scale(.6)}
   #rail{display:none}
@@ -679,7 +687,8 @@ body[data-step="contact"] .corner-logo{opacity:0;transform:scale(.6)}
 
   function pad(k){ return (k < 10 ? "0" : "") + k; }
   function showChapter(i){       // "02 Floor plan  05 / 12": chapter plus deck number
-    chapter.textContent = sections[i].getAttribute("data-chapter") || "";
+    chapter.textContent = "";
+    var n = el("span", "chap-name"); n.textContent = sections[i].getAttribute("data-chapter") || ""; chapter.appendChild(n);
     var b = el("b"); b.textContent = pad(i + 1) + " / " + pad(sections.length); chapter.appendChild(b);
   }
 

@@ -17,7 +17,9 @@ generous space. It should read like a well-made architect's presentation, not a 
   use the same colour (`GROUND` in `make_web.py`), so edges never show a white box.
 - **Square and defined.** Square corners on cards, tiles, labels, swatches. Separation by 1 px hairlines
   (`--line`, `--line-strong`), never drop shadows. Only indicator dots are round.
-- **One type family, one ramp.** h1 → h2 → lede → body → note → label. Eyebrows and labels uppercase,
+- **One type family, one ramp.** Hanken Grotesk (OFL), self-hosted from `assets/brand/fonts/` and inlined
+  by `build_standalone.py`, so every machine shows the same face; Helvetica Neue and Arial are only the
+  offline fallback. h1 → h2 → lede → body → note → label. Eyebrows and labels uppercase,
   tracked, small. Exactly one italic `<em>` per headline, in the accent colour.
 - **Photography gridded or framed by a hairline, never decorated.** Grid tiles crop with `object-fit: cover`;
   a render in a figure keeps its full frame so its boxes stay true. Cards sit on the plain ground beside the
@@ -28,7 +30,8 @@ generous space. It should read like a well-made architect's presentation, not a 
   list. Zoom fades the edges instead of cutting them. Never put a plan back on a white or tinted panel.
 - **Renders are read, not admired.** Full image, hairline outline, boxes as translucent accent fills with a
   crisp stroke. Zoom, do not pan around.
-- **Beats are numbered.** Each eyebrow starts with its beat number; the top bar shows `05 / 12`.
+- **Beats are numbered.** Each eyebrow starts with its beat number; the top bar shows `05 / 12`, and on a
+  phone only the count, so the centred logo has room.
 - **The studio mark sits in a corner, small.** One fixed logo, bottom right on desktop and top centre on a
   phone, never over a picture. It only moves on the closing beat, where it fades out as the centred logo
   arrives with the studio's website and email.
