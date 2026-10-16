@@ -16,7 +16,8 @@ copy decisions behind it, is `story/storyboard.md`.
 | 7 | 03 Mood | the proposal | `figure`: one of our renders, alone | wood at the heart; its warmth carried into plaster, stucco and textile; never split by level |
 | 8-10 | 03 Mood | one beat per material | `figure`: our render of the room where the material would land, alone | wood; stone and earth; plaster and light |
 | 11 | 03 Mood | the materials we propose | `grid`: close-ups with swatches | the essence: the list of proposed natural materials; restate the opening claim |
-| 12 | Contact | contact | `none`: logo centred | the studio logo, the website and the email; the corner logo fades out as this one arrives |
+| 12-13 | 03 Mood | material boards | `grid`: 4 columns, one big lead, captions and swatches | the references gathered: wood, stone and earth; plaster, light and textile |
+| 14 | Contact | contact | `none`: logo centred | the studio logo, the website and the email; the corner logo fades out as this one arrives |
 
 ## Rules for this arc
 
