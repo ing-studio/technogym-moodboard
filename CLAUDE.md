@@ -14,8 +14,9 @@ Three chapters, in this order:
 2. **Floor plan**: 1 beat: all floors read as one body, one organism, not separate pieces
    (`assets/source/02-floor-plan`).
 3. **Mood**: why natural materials, the proposal (wood at the heart, its warmth carried into plaster, stucco and textile), one beat per material (wood; stone and earth;
-   lime plaster and warm light; textile, leather and bronze), the list of proposed materials, and bright accents (LED displays, billboards, a bright staircase)
-   (`assets/source/03-mood`).
+   lime plaster and warm light), then the list of proposed materials as the essence. Beats 06-10 each show one of
+   our renders of the building (`mood-62` to `mood-66`) and nothing else; references never sit beside our
+   renders (`assets/source/03-mood`).
 
 Project specifics (client, claim, areas, numbers) are still to come: see TODOs in `story/brief.md`.
 

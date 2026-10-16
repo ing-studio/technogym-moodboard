@@ -2205,6 +2205,151 @@
       "web_w": 736,
       "web_h": 981,
       "web_bytes": 45700
+    },
+    {
+      "id": "mood-62-render-free-weights-hall",
+      "file": "assets/source/03-mood/mood-62-render-free-weights-hall.jpg",
+      "chapter": "03-mood",
+      "title": "Free-weights hall",
+      "alt": "Free-weights hall with bench racks either side of a central aisle, dumbbell racks behind, a terrazzo floor and exposed ducts under the concrete ceiling",
+      "tags": [
+        "render",
+        "training-floor",
+        "terrazzo"
+      ],
+      "sha256": "702df68532fbeb9431e9e298e3efe436098a77de2a9ef62efbeca1678b98980d",
+      "original": "assets/rends/1.jpg",
+      "w": 2260,
+      "h": 1291,
+      "bytes": 518088,
+      "orientation": "landscape",
+      "palette": [
+        "#82766e",
+        "#b8b2aa",
+        "#413631",
+        "#5d5049",
+        "#6c6058"
+      ],
+      "web": "assets/web/03-mood/mood-62-render-free-weights-hall.webp",
+      "web_w": 1600,
+      "web_h": 914,
+      "web_bytes": 162680
+    },
+    {
+      "id": "mood-63-render-bench-aisle",
+      "file": "assets/source/03-mood/mood-63-render-bench-aisle.jpg",
+      "chapter": "03-mood",
+      "title": "Bench aisle",
+      "alt": "View along the training floor between two pairs of bench racks, clad columns and suspended ceiling panels, a lit wall panel on the right",
+      "tags": [
+        "render",
+        "training-floor",
+        "terrazzo"
+      ],
+      "sha256": "e646a034509e79c2e584dd28b97091537ea2636e3bef3f08edfc4833dff800f4",
+      "original": "assets/rends/4.jpg",
+      "w": 2260,
+      "h": 1291,
+      "bytes": 437803,
+      "orientation": "landscape",
+      "palette": [
+        "#675b53",
+        "#80756e",
+        "#4b4039",
+        "#948a83",
+        "#bab8b6"
+      ],
+      "web": "assets/web/03-mood/mood-63-render-bench-aisle.webp",
+      "web_w": 1600,
+      "web_h": 914,
+      "web_bytes": 128744
+    },
+    {
+      "id": "mood-64-render-plate-loaded-zone",
+      "file": "assets/source/03-mood/mood-64-render-plate-loaded-zone.jpg",
+      "chapter": "03-mood",
+      "title": "Plate-loaded zone",
+      "alt": "Plate-loaded strength machines in front of a metal-clad wall, plate storage in the foreground and a clad column on the left",
+      "tags": [
+        "render",
+        "strength",
+        "storage"
+      ],
+      "sha256": "8beb13a3fc9ae638b2120855e7e25beaa4390dd6b14ccf5d95c162cb5776a8b7",
+      "original": "assets/rends/5.jpg",
+      "w": 2260,
+      "h": 1291,
+      "bytes": 408180,
+      "orientation": "landscape",
+      "palette": [
+        "#7e7268",
+        "#9f978f",
+        "#3b332e",
+        "#5d534d",
+        "#6d5e53"
+      ],
+      "web": "assets/web/03-mood/mood-64-render-plate-loaded-zone.webp",
+      "web_w": 1600,
+      "web_h": 914,
+      "web_bytes": 118306
+    },
+    {
+      "id": "mood-65-render-machine-floor-terrazzo",
+      "file": "assets/source/03-mood/mood-65-render-machine-floor-terrazzo.jpg",
+      "chapter": "03-mood",
+      "title": "Machine floor",
+      "alt": "Strength machines among concrete columns and beams on a dark terrazzo floor, exposed ducts and grilles overhead",
+      "tags": [
+        "render",
+        "strength",
+        "terrazzo"
+      ],
+      "sha256": "5c6299cc6f192bdad61f0f628163935ce1d487c1b69536d5fc0a1c4e844b48fc",
+      "original": "assets/rends/3.jpg",
+      "w": 2260,
+      "h": 1291,
+      "bytes": 486893,
+      "orientation": "landscape",
+      "palette": [
+        "#4c4643",
+        "#2f2927",
+        "#67605a",
+        "#807a75",
+        "#a1a09e"
+      ],
+      "web": "assets/web/03-mood/mood-65-render-machine-floor-terrazzo.webp",
+      "web_w": 1600,
+      "web_h": 914,
+      "web_bytes": 148672
+    },
+    {
+      "id": "mood-66-render-columns-ceilings",
+      "file": "assets/source/03-mood/mood-66-render-columns-ceilings.jpg",
+      "chapter": "03-mood",
+      "title": "Columns and ceilings",
+      "alt": "Leg press and bench racks under concrete beams, clad columns and pale ceiling panels, a lit wall panel at the back of the room",
+      "tags": [
+        "render",
+        "strength",
+        "lighting"
+      ],
+      "sha256": "af11e9415015e878288053a6d0e502a94a07db772897d40f0ab043deaed0f948",
+      "original": "assets/rends/2.jpg",
+      "w": 1280,
+      "h": 731,
+      "bytes": 185110,
+      "orientation": "landscape",
+      "palette": [
+        "#5f5854",
+        "#76706c",
+        "#332e2b",
+        "#8b8681",
+        "#aba7a1"
+      ],
+      "web": "assets/web/03-mood/mood-66-render-columns-ceilings.webp",
+      "web_w": 1280,
+      "web_h": 731,
+      "web_bytes": 103086
     }
   ]
 }

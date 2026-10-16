@@ -15,15 +15,13 @@ into plaster, stucco and textile, with stone and earth grounding it.
 | 03 | vision-look | 01 Vision | What we need to look at | Read it by *material* | figure: vision-01, boxes 1 Oak, 2 Glass, 3 Metal, 4 Steel and textile |
 | 04 | vision-assess | 01 Vision | What needs to be assessed | Three points to *assess* before we build the mood | grid: vision-02 (big), 03, 01 tagged 1-3 |
 | 05 | plan-overview | 02 Floor plan | Top down | One building, one *body* | figure: 6 plans in 2 columns, no boxes |
-| 06 | mood-natural | 03 Mood | Why natural materials | Why the mood is built from *natural* materials | grid: mood-01 (big, 3 Continuity), 22 (1 Daylight), 08 (2 Density) |
-| 07 | mood-spine | 03 Mood | Our proposal | Wood at the heart, *warmth* everywhere | grid: mood-44, 04, 09, 20 (no tags) |
-| 08 | mood-wood | 03 Mood | Material: wood | Wood carries the *spine* | grid: mood-05, 23, 18, 14, 12, 49 (cork veneer) |
-| 09 | mood-earth | 03 Mood | Material: stone and earth | Stone and earth *ground* it | grid: 3 large in a row: mood-40, 58, 57 |
-| 10 | mood-plaster | 03 Mood | Material: lime plaster and light | Plaster *holds* the light | grid: mood-56, 46, 47, 17, 37, 55 (LED screen room) |
-| 11 | mood-textile | 03 Mood | Material: textile, leather and copper | Textile and leather make it *soft* | grid: mood-34, 26, 16, 41 (2 columns) |
-| 12 | mood-close | 03 Mood | The materials we propose | A mood built from the *whole* building | grid: mood-42 (big), 48, 50, 19, 51 |
-| 13 | mood-accents | 03 Mood | Bright accents | Calm materials, a few *bright* moments | grid: mood-59 staircase (big), 60, 54, 61, 31; tags Vertical connection, LED display, Billboard, Light accent |
-| 14 | contact | Contact | (none) | Logo centred, "Let us build this mood together.", www.ing.studio, hello@ing.studio | none; the fixed corner logo fades out as the centred logo scales in |
+| 06 | mood-natural | 03 Mood | Why natural materials | Why the mood is built from *natural* materials | figure: render mood-62 free-weights hall only, labelled "Render: …" |
+| 07 | mood-spine | 03 Mood | Our proposal | Wood at the heart, *warmth* everywhere | figure: render mood-63 bench aisle only, labelled "Render: …" |
+| 08 | mood-wood | 03 Mood | Material: wood | Wood carries the *spine* | figure: render mood-64 plate-loaded zone only, labelled "Render: …" |
+| 09 | mood-earth | 03 Mood | Material: stone and earth | Stone and earth *ground* it | figure: render mood-65 machine floor only, labelled "Render: …" |
+| 10 | mood-plaster | 03 Mood | Material: lime plaster and light | Plaster *holds* the light | figure: render mood-66 columns and ceilings only, labelled "Render: …" |
+| 11 | mood-close | 03 Mood | The materials we propose | A mood built from the *whole* building | grid: mood-42 (big), 48, 50, 19, 51 |
+| 12 | contact | Contact | (none) | Logo centred, "Let us build this mood together.", www.ing.studio, hello@ing.studio | none; the fixed corner logo fades out as the centred logo scales in |
 
 ## Key copy decisions
 
@@ -42,13 +40,17 @@ into plaster, stucco and textile, with stone and earth grounding it.
   landscape for recovery, a bright scene for classes). One surface, many moods.
 - **07** Proposal: wood is the heart of the mood and stays throughout; its warmth travels into plaster,
   stucco and textile so the building never feels heavy. No materials assigned per level; no image tags.
-- **12** Materials list: wood (oak, walnut, cork, figured veneer), stone, earth, plaster, textile and leather,
+- **06-10** Each mood beat leads with a render of the building (mood-62 to 66, from assets/rends) chosen
+  for where the material would land, shown alone: no mood references beside our renders.
+- The textile beat (old 11) and the bright accents beat (old 13) are removed on request; textile stays in
+  the proposal (07) and the materials list (11).
+- **11** Materials list, the essence of the deck: wood (oak, walnut, cork, figured veneer), stone, earth, plaster, textile and leather,
   metal details.
 
 ## 03-mood images
 
-- Used: 01, 02, 04, 05, 06, 08, 09, 12, 14, 16, 17, 18, 19, 20, 22, 23, 25, 26, 31, 32, 34, 36, 37, 38, 39, 40, 41, 42, 44, 46, 47, 48, 49, 50, 51, 55 (36 of 56).
-- Not used: colour or neon led (03, 07, 27, 28, 30, 33, 52, 53, 54), concrete or steel (10, 13), too small (29), replaced or removed on request (21, 24, 35), third-party logo or sign (11, 15, 43, 45).
+- Used: 19, 42, 48, 50, 51 (materials list) and the renders 62-66.
+- Not used: every other mood reference. Beats 06-10 show only our renders (on request), and the textile and accents beats are removed. The references stay catalogued for a later board.
 - mood-55 has a Xiaohongshu watermark in its bottom-right corner.
 
 ## Review board
