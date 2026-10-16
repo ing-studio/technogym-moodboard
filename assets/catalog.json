@@ -2350,6 +2350,122 @@
       "web_w": 1280,
       "web_h": 731,
       "web_bytes": 103086
+    },
+    {
+      "id": "mood-67-render-terrazzo-floor",
+      "file": "assets/source/03-mood/mood-67-render-terrazzo-floor.jpg",
+      "chapter": "03-mood",
+      "title": "Terrazzo floor",
+      "alt": "Close-up of the warm grey terrazzo floor with pale stone chips, cropped from our free-weights hall render",
+      "tags": [
+        "render",
+        "materials",
+        "terrazzo"
+      ],
+      "sha256": "a936e2e748824149ab1242bb2fc75e563f7659781521fb3c1018eb7d9a70c6fc",
+      "original": "assets/inbox/mood-67-render-terrazzo-floor.jpg",
+      "w": 500,
+      "h": 315,
+      "bytes": 74584,
+      "orientation": "landscape",
+      "palette": [
+        "#7c685c",
+        "#826e62",
+        "#776256",
+        "#88756a",
+        "#907f76"
+      ],
+      "web": "assets/web/03-mood/mood-67-render-terrazzo-floor.webp",
+      "web_w": 500,
+      "web_h": 315,
+      "web_bytes": 31784
+    },
+    {
+      "id": "mood-68-render-exposed-concrete",
+      "file": "assets/source/03-mood/mood-68-render-exposed-concrete.jpg",
+      "chapter": "03-mood",
+      "title": "Exposed concrete",
+      "alt": "Close-up of exposed concrete beams and ceiling slab, cropped from our plate-loaded zone render",
+      "tags": [
+        "render",
+        "materials",
+        "concrete"
+      ],
+      "sha256": "0a2862c9d439d79ea65a5e0c1cae17187b14496efd240dd063ac13e8e8c6a8f6",
+      "original": "assets/inbox/mood-68-render-exposed-concrete.jpg",
+      "w": 680,
+      "h": 230,
+      "bytes": 35406,
+      "orientation": "landscape",
+      "palette": [
+        "#746f6b",
+        "#908c89",
+        "#67615d",
+        "#969392",
+        "#7e7976"
+      ],
+      "web": "assets/web/03-mood/mood-68-render-exposed-concrete.webp",
+      "web_w": 680,
+      "web_h": 230,
+      "web_bytes": 6738
+    },
+    {
+      "id": "mood-69-render-brushed-metal",
+      "file": "assets/source/03-mood/mood-69-render-brushed-metal.jpg",
+      "chapter": "03-mood",
+      "title": "Brushed metal panels",
+      "alt": "Close-up of brushed metal wall panels meeting at a vertical joint, cropped from our plate-loaded zone render",
+      "tags": [
+        "render",
+        "materials",
+        "metal"
+      ],
+      "sha256": "9b44f9ce791542d89607580c39d8ace343a006e3e287782643602b395153ae85",
+      "original": "assets/inbox/mood-69-render-brushed-metal.jpg",
+      "w": 240,
+      "h": 170,
+      "bytes": 7020,
+      "orientation": "landscape",
+      "palette": [
+        "#2a231d",
+        "#7c7774",
+        "#898584",
+        "#4f4945",
+        "#9a9896"
+      ],
+      "web": "assets/web/03-mood/mood-69-render-brushed-metal.webp",
+      "web_w": 240,
+      "web_h": 170,
+      "web_bytes": 920
+    },
+    {
+      "id": "mood-70-render-perforated-brass",
+      "file": "assets/source/03-mood/mood-70-render-perforated-brass.jpg",
+      "chapter": "03-mood",
+      "title": "Perforated brass",
+      "alt": "Close-up of a brass-coloured metal screen perforated with round holes, cropped from our free-weights hall render",
+      "tags": [
+        "render",
+        "materials",
+        "brass"
+      ],
+      "sha256": "1c141bb1a4fe5937de51ade879a61f137aa46bff3eb8fdee71a70879a84549ed",
+      "original": "assets/inbox/mood-70-render-perforated-brass.jpg",
+      "w": 210,
+      "h": 215,
+      "bytes": 30333,
+      "orientation": "square",
+      "palette": [
+        "#98917a",
+        "#9f9882",
+        "#afa897",
+        "#827d6f",
+        "#ccc5b8"
+      ],
+      "web": "assets/web/03-mood/mood-70-render-perforated-brass.webp",
+      "web_w": 210,
+      "web_h": 215,
+      "web_bytes": 10758
     }
   ]
 }
